@@ -1,3 +1,8 @@
+---
+layout: default
+title: Riya Biju Ollukaran - Data Science Portfolio
+---
+
 # AnalyticsByRiya.github.io
 
 # Riya Biju Ollukaran's Data Science Portfolio
