@@ -8,7 +8,7 @@ title: Riya Biju Ollukaran - Data Science Portfolio
 
 **Final-Year Master of Data Science @ Monash University**  
 Exploring geospatial analysis (ArcGIS) alongside core DS skills in Python, R, and SQL. Turning data into insights for public health, business, and beyond.  
-+61 416 886 142 | riyabijuollukaran@gmail.com | [LinkedIn](https://www.linkedin.com/in/riyabiju) | Melbourne  
++61 416 886 142 | riyabijuollukaran@gmail.com | [LinkedIn](www.linkedin.com/in/riya-biju-ollukaran) | Melbourne  
 
 ## About Me
 I'm a data enthusiast with a passion for actionable analytics. Currently pursuing my Master's at Monash University. I blend statistical thinking with tools like pandas, scikit-learn, and ArcGIS to solve real-world problems. 
