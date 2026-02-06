@@ -8,7 +8,7 @@ title: Riya Biju Ollukaran - Data Science Portfolio
 
 **Final-Year Master of Data Science @ Monash University**  
 Exploring geospatial analysis (ArcGIS) alongside core DS skills in Python, R, and SQL. Turning data into insights for public health, business, and beyond.  
-+61 416 886 142 | riyabijuollukaran@gmail.com | [LinkedIn](www.linkedin.com/in/riya-biju-ollukaran) | Melbourne  
+riyabijuollukaran@gmail.com | [LinkedIn](https://www.linkedin.com/in/riya-biju-ollukaran/) | Melbourne  
 
 ## About Me
 I'm a data enthusiast with a passion for actionable analytics. Currently pursuing my Master's at Monash University. I blend statistical thinking with tools like pandas, scikit-learn, and ArcGIS to solve real-world problems. 
@@ -33,7 +33,7 @@ Designed an innovative AI framework for early outbreak spotting using multi-moda
 - **Tools**: Oracle SQL Developer, GitLab, Excel, Canva, Jira  
 
 ## Education & Certifications
-**Master of Data Science** – Monash University (Jul 2024–current) 
+**Master of Data Science** – Monash University (2024–current) 
 
 **BA Economics** (Statistics-Minor) – St. Xavier’s College (2020–2023)  
 - GPA: 7.83/10  
@@ -44,10 +44,7 @@ Certifications:
 - ArcGIS for Beginners: Mapping Urban Green Spaces (Coursera, 2026)
 
 ## Leadership & Community
-- **Cognizance 2023 Organizer** (St. Xavier’s): Led event planning for 294 participants; designed promo materials in Canva; managed social media & logistics.  
+- **Cognizance 2023 Organizer** (St. Xavier’s, College): Led event planning for 294 participants; designed promo materials in Canva; managed social media & logistics.  
 - **Volunteering**: Monash Student Associations (2025–present); Church Youth Group (2021–2023)—event coordination & community building.  
-
-## Get in Touch  
-[Email Me](mailto:riyabijuollukaran@gmail.com) 
 
 *Updated February 2026*
