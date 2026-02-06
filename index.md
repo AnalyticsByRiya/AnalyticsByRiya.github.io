@@ -2,6 +2,12 @@
 layout: default
 title: Riya Biju Ollukaran - Data Science Portfolio
 ---
+
+<video width="100%" autoplay loop muted playsinline>
+  <source src="/assets/video/GIS Personal LinkedIn Banner.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 # Riya Biju Ollukaran's Data Science Portfolio
 
 ![Profile Banner](assets/video/GIS Personal LinkedIn Banner.mp4)
@@ -34,11 +40,10 @@ Designed an innovative AI framework for early outbreak spotting using multi-moda
 
 ## Education & Certifications
 **Master of Data Science** – Monash University (2024–current) 
-
-**BA Economics** (Statistics-Minor) – St. Xavier’s College (2020–2023)  
+**Bachelor of Economics** (Statistics-Minor) – St. Xavier’s College (2020–2023)  
 - GPA: 7.83/10  
 
-Certifications:  
+**Certifications:**  
 - Understanding & Visualizing Data with Python (Coursera, 2020)  
 - Python Data Analysis Masterclass (Udemy, 2024)
 - ArcGIS for Beginners: Mapping Urban Green Spaces (Coursera, 2026)
