@@ -3,14 +3,11 @@ layout: default
 title: Riya Biju Ollukaran - Data Science Portfolio
 ---
 
+# Riya Biju Ollukaran's Data Science Portfolio
 <video width="100%" autoplay loop muted playsinline>
   <source src="/assets/video/GIS Personal LinkedIn Banner.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
-# Riya Biju Ollukaran's Data Science Portfolio
-
-![Profile Banner](assets/video/GIS Personal LinkedIn Banner.mp4)
 
 **Final-Year Master of Data Science @ Monash University**  
 Exploring geospatial analysis (ArcGIS) alongside core DS skills in Python, R, and SQL. Turning data into insights for public health, business, and beyond.  
