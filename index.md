@@ -1,108 +1,124 @@
----
-layout: default 
-title: Riya Biju Ollukaran - Spatial Data Science Portfolio
----
-
-<!-- Core Portfolio Styling -->
-<style>
-  :root {
-    --primary-blue: #0284c7;
-    --primary-green: #059669;
-    --dark-slate: #0f172a;
-    --body-gray: #334155;
-    --light-bg: #f8fafc;
-    --border-gray: #e2e8f0;
-  }
-  
-  .portfolio-container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Inter', -apple-system, sans-serif;
-    color: var(--dark-slate);
-    line-height: 1.6;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--border-gray);
-  }
-
-  .grid-card {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 40px;
-    background: #ffffff;
-    border: 1px solid var(--border-gray);
-    border-radius: 16px;
-    padding: 35px;
-    margin-bottom: 35px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 10px 15px -3px rgba(0,0,0,0.03);
-    align-items: start;
-  }
-
-  .grid-card.reverse {
-    grid-template-columns: 0.8fr 1.2fr;
-  }
-
-  .pipeline-box {
-    background: var(--light-bg);
-    border: 1px dashed #cbd5e0;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 18px 0;
-  }
-
-  .tech-badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-right: 6px;
-    margin-bottom: 6px;
-  }
-
-  .badge-gis { background: #e0f2fe; color: #0366d6; }
-  .badge-3d { background: #ffedd5; color: #ea580c; }
-  .badge-ds { background: #ecfdf5; color: #059669; }
-  .badge-meta { background: #f1f5f9; color: #475569; }
-
-  @media (max-width: 768px) {
-    .grid-card, .grid-card.reverse {
-      grid-template-columns: 1fr;
-      padding: 20px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riya Biju Ollukaran - Spatial Data Science Portfolio</title>
+  <!-- Core Portfolio Styling -->
+  <style>
+    :root {
+      --primary-blue: #0284c7;
+      --primary-green: #059669;
+      --dark-slate: #0f172a;
+      --body-gray: #334155;
+      --light-bg: #f8fafc;
+      --border-gray: #e2e8f0;
     }
-    .grid-card .visual-pane {
-      order: -1;
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-bg);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--dark-slate);
+      -webkit-font-smoothing: antialiased;
     }
-  }
-</style>
+
+    .portfolio-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 60px;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border-gray);
+    }
+
+    .grid-card {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-radius: 16px;
+      padding: 35px;
+      margin-bottom: 35px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 10px 15px -3px rgba(0,0,0,0.03);
+      align-items: start;
+    }
+
+    .grid-card.reverse {
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .pipeline-box {
+      background: var(--light-bg);
+      border: 1px dashed #cbd5e0;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 18px 0;
+    }
+
+    .tech-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    .badge-gis { background: #e0f2fe; color: #0366d6; }
+    .badge-3d { background: #ffedd5; color: #ea580c; }
+    .badge-ds { background: #ecfdf5; color: #059669; }
+    .badge-meta { background: #f1f5f9; color: #475569; }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 35px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-card, .grid-card.reverse, .meta-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+      .grid-card .visual-pane {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
 
 <div class="portfolio-container">
 
   <!-- HERO HEADER SECTION -->
-  <header style="text-align: center; padding: 40px 0 20px 0; margin-bottom: 40px;">
-    <h1 style="font-size: 3rem; font-weight: 800; color: var(--dark-slate); margin-bottom: 5px; letter-spacing: -0.03em;">Riya Biju Ollukaran</h1>
-    <p style="font-size: 1.3rem; color: var(--primary-blue); margin-top: 0; font-weight: 500;">Spatial Data Scientist & 3D Environment Specialist</p>
+  <header style="text-align: center; padding: 20px 0; margin-bottom: 40px;">
+    <h1 style="font-size: 3.2rem; font-weight: 800; color: var(--dark-slate); margin: 0 0 10px 0; letter-spacing: -0.03em;">Riya Biju Ollukaran</h1>
+    <p style="font-size: 1.4rem; color: var(--primary-blue); margin-top: 0; font-weight: 500;">Spatial Data Scientist & 3D Environment Specialist</p>
     
-    <p style="max-width: 750px; margin: 20px auto; color: var(--body-gray); font-size: 1.1rem;">
-      Final-Year Master of Data Science student at Monash University. Fusing Data Science with geospatial mechanics (ArcGIS, QGIS, Blender) to translate spatial telemetry into high-fidelity environments.
+    <p style="max-width: 750px; margin: 20px auto; color: var(--body-gray); font-size: 1.1rem; line-height: 1.7;">
+      Final-Year Master of Data Science candidate at Monash University. Fusing machine learning and statistical architectures with geospatial mechanics (ArcGIS, QGIS, Blender) to translate spatial telemetry into high-fidelity stakeholder environments.
     </p>
 
-    <div style="margin-top: 15px; font-size: 0.95rem; color: #64748b;">
-      📍 Melbourne, Australia | ✉️ riyabijuollukaran@gmail.com | 🔗 <a href="https://www.linkedin.com/in/riya-biju-ollukaran/" target="_blank" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">LinkedIn</a>
+    <div style="margin-top: 25px; font-size: 1rem; color: #64748b;">
+      📍 Melbourne, Australia &nbsp;|&nbsp; ✉️ <a href="mailto:riyabijuollukaran@gmail.com" style="color: var(--body-gray); text-decoration: none;">riyabijuollukaran@gmail.com</a> &nbsp;|&nbsp; 🔗 <a href="https://www.linkedin.com/in/riya-biju-ollukaran/" target="_blank" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">LinkedIn</a>
     </div>
   </header>
 
   <!-- BANNER MEDIA CONTAINER -->
-  <div style="width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 5px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);">
+  <div style="width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); background: #000;">
     <video width="100%" autoplay loop muted playsinline style="display: block;">
       <source src="assets/video/GIS Personal LinkedIn Banner.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -112,7 +128,7 @@ title: Riya Biju Ollukaran - Spatial Data Science Portfolio
   <!-- SECTION I: GEOSPATIAL & 3D TOPOGRAPHIC MODELING -->
   <h2 class="section-title" style="color: var(--primary-blue); border-color: var(--primary-blue);">I. Geospatial Analysis & 3D Topographic Modeling</h2>
 
-  <!-- PROJECT 1: Galapagos 3D Modeling (Digital Twin Frame) -->
+  <!-- PROJECT 1: Galapagos 3D Modeling -->
   <article class="grid-card">
     <div>
       <span style="font-size: 0.8rem; font-weight: 700; color: #b45309; letter-spacing: 0.05em; text-transform: uppercase;">[High Complexity] Digital Twin Prototype</span>
@@ -126,13 +142,13 @@ title: Riya Biju Ollukaran - Spatial Data Science Portfolio
         </div>
       </div>
 
-      <ul style="padding-left: 20px; color: var(--body-gray);">
-        <li style="margin-bottom: 8px;"><strong>Pipeline Engineering:</strong> Built an uncompressed, non-destructive spatial asset extraction process to translate raw GIS elevation models directly into structural render meshes.</li>
-        <li style="margin-bottom: 8px;"><strong>Topographical Alignment:</strong> Resolved systemic software unit-mismatches by re-projecting base source layers to ensure geographic coordinate accuracy.</li>
-        <li style="margin-bottom: 8px;"><strong>Procedural Node Development:</strong> Engineered complex, object-space procedural shader nodes within Blender to accurately model micro-wave pattern distributions across deep water interfaces.</li>
+      <ul style="padding-left: 20px; color: var(--body-gray); margin: 0; gap: 8px; display: flex; flex-direction: column;">
+        <li><strong>Pipeline Engineering:</strong> Built an uncompressed, non-destructive spatial asset extraction process to translate raw GIS elevation models directly into structural render meshes.</li>
+        <li><strong>Topographical Alignment:</strong> Resolved systemic software unit-mismatches by re-projecting base source layers to ensure geographic coordinate accuracy.</li>
+        <li><strong>Procedural Node Development:</strong> Engineered complex, object-space procedural shader nodes within Blender to accurately model micro-wave pattern distributions across deep water interfaces.</li>
       </ul>
 
-      <div style="margin-top: 15px;">
+      <div style="margin-top: 20px;">
         <span class="tech-badge badge-gis">QGIS</span>
         <span class="tech-badge badge-3d">Blender 3D</span>
         <span class="tech-badge badge-gis">DEM Modeling</span>
@@ -167,13 +183,13 @@ title: Riya Biju Ollukaran - Spatial Data Science Portfolio
         </div>
       </div>
 
-      <ul style="padding-left: 20px; color: var(--body-gray);">
-        <li style="margin-bottom: 8px;"><strong>Multi-Criteria Evaluation (MCE):</strong> Standardized 7 separate datasets by resolving structural vector defects and coordinate shifts across administrative maps.</li>
-        <li style="margin-bottom: 8px;"><strong>Terrain Derivation:</strong> Extracted continuous slope gradients and directional aspect configurations using spatial mathematical matrices from contours.</li>
-        <li style="margin-bottom: 8px;"><strong>Environmental Filtering:</strong> Executed raster calculator logic loops and mathematical constraints, identifying 263 low-impact environmental candidate locations across the Kruger National Park layout.</li>
+      <ul style="padding-left: 20px; color: var(--body-gray); margin: 0; gap: 8px; display: flex; flex-direction: column;">
+        <li><strong>Multi-Criteria Evaluation (MCE):</strong> Standardized 7 separate datasets by resolving structural vector defects and coordinate shifts across administrative maps.</li>
+        <li><strong>Terrain Derivation:</strong> Extracted continuous slope gradients and directional aspect configurations using spatial mathematical matrices from contours.</li>
+        <li><strong>Environmental Filtering:</strong> Executed raster calculator logic loops and mathematical constraints, identifying 263 low-impact environmental candidate locations across the Kruger National Park layout.</li>
       </ul>
 
-      <div style="margin-top: 15px;">
+      <div style="margin-top: 20px;">
         <span class="tech-badge badge-gis">ArcGIS Pro</span>
         <span class="tech-badge badge-gis">Spatial Analyst</span>
         <span class="tech-badge badge-meta">MCE Matrix</span>
@@ -188,13 +204,13 @@ title: Riya Biju Ollukaran - Spatial Data Science Portfolio
       <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">San Francisco Mapping: Urban Green Spaces Project Evaluation</h3>
       <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">Independent Geospatial Certification Focus</p>
       
-      <p style="color: var(--body-gray); margin-top: 15px;">
+      <p style="color: var(--body-gray); margin-top: 15px; margin-bottom: 15px;">
         An urban assessment model checking local public park accessibility thresholds and density distribution spreads across metropolitan San Francisco boundaries. Evaluated infrastructural park access by matching regional civic vectors against community boundaries.
       </p>
 
-      <ul style="padding-left: 20px; color: var(--body-gray);">
-        <li style="margin-bottom: 8px;">Analyzed neighborhood location access variances by configuring demographic distribution buffers against spatial polygon layouts.</li>
-        <li style="margin-bottom: 8px;">Generated spatial scores shown explicitly inside the formal map artifact titled <strong>SF Parks Evaluation.jpg</strong>.</li>
+      <ul style="padding-left: 20px; color: var(--body-gray); margin: 0; gap: 8px; display: flex; flex-direction: column;">
+        <li>Analyzed neighborhood location access variances by configuring demographic distribution buffers against spatial polygon layouts.</li>
+        <li>Generated spatial scores shown explicitly inside the formal map artifact titled <strong>SF Parks Evaluation.jpg</strong>.</li>
       </ul>
 
       <div style="margin-top: 25px;">
@@ -209,54 +225,53 @@ title: Riya Biju Ollukaran - Spatial Data Science Portfolio
     </div>
   </article>
 
-
   <!-- SECTION II: DATA SCIENCE FRAMEWORKS & SPATIOTEMPORAL DASHBOARDS -->
   <h2 class="section-title" style="color: var(--primary-green); border-color: var(--primary-green);">II. Data Science & Narrative Dashboards</h2>
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 30px; margin-bottom: 5px;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px;">
     
-    <!-- PROJECT 4: AI Outbreak Spotting (Data Science Module) -->
+    <!-- PROJECT 4: AI Outbreak Spotting -->
     <article style="background: #ffffff; border: 1px solid var(--border-gray); border-radius: 16px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between;">
       <div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px;">
           <h3 style="margin: 0; font-size: 1.4rem; color: var(--dark-slate);">AI-Powered Pandemic Early Detection System</h3>
           <span style="color: #64748b; font-size: 0.85rem; font-weight: 600;">Monash University</span>
         </div>
-        <p style="color: var(--body-gray); font-size: 0.95rem; line-height: 1.6;">
+        <p style="color: var(--body-gray); font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
           Engineered an analytics architecture model utilizing multi-stream inputs (wastewater, mobility logs, historical patterns) to pinpoint initial public health anomalies. 
         </p>
-        <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--body-gray);">
-          <li style="margin-bottom: 6px;">Evaluated deep historical CDC FluView tracking layers using R frameworks (`dplyr`, `ggplot2`).</li>
-          <li style="margin-bottom: 6px;">Achieved an ~80% analytical sensitivity metric across early anomaly signal variations, earning academic Distinction.</li>
+        <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--body-gray); margin: 0; gap: 6px; display: flex; flex-direction: column;">
+          <li>Evaluated deep historical CDC FluView tracking layers using R frameworks (`dplyr`, `ggplot2`).</li>
+          <li>Achieved an ~80% analytical sensitivity metric across early anomaly signal variations, earning academic Distinction.</li>
         </ul>
       </div>
       
-      <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-gray);">
+      <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--border-gray);">
         <span class="tech-badge badge-ds">R Core</span>
         <span class="tech-badge badge-ds">Time-Series</span>
         <span class="tech-badge badge-meta">Predictive Modeling</span>
       </div>
     </article>
 
-    <!-- PROJECT 5: Arctic Circle Change (Spatiotemporal Track) -->
+    <!-- PROJECT 5: Arctic Circle Change -->
     <article style="background: var(--dark-slate); color: #ffffff; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid var(--primary-green);">
       <div>
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
           <h3 style="margin: 0; font-size: 1.4rem; color: #ffffff;">Arctic Circle Environmental Change Visualizer</h3>
           <span style="background: #b91c1c; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;">ONGOING DEVELOPER PIPELINE</span>
         </div>
-        <p style="color: #94a3b8; font-size: 0.95rem; font-weight: 500;">Monash University | FIT5147 – Data Visualization Focus</p>
+        <p style="color: #94a3b8; font-size: 0.95rem; font-weight: 500; margin-top: 0;">Monash University | FIT5147 – Data Visualization Focus</p>
         
-        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-top: 15px;">
+        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-top: 15px; margin-bottom: 15px;">
           Designing an interactive narrative visualization application engine to explore the overlapping environmental impacts of systemic polar shifts.
         </p>
-        <ul style="padding-left: 20px; font-size: 0.9rem; color: #cbd5e1;">
-          <li style="margin-bottom: 6px;">Consolidating long-term spatio-temporal logs tracking sea ice anomalies (1978–2026) alongside satellite GPS coordinates.</li>
-          <li style="margin-bottom: 6px;">Integrating synchronized dashboards deploying active Leaflet mapping frameworks to capture how resource tracking overlaps commercial shipping channels.</li>
+        <ul style="padding-left: 20px; font-size: 0.9rem; color: #cbd5e1; margin: 0; gap: 6px; display: flex; flex-direction: column;">
+          <li>Consolidating long-term spatio-temporal logs tracking sea ice anomalies (1978–2026) alongside satellite GPS coordinates.</li>
+          <li>Integrating synchronized dashboards deploying active Leaflet mapping frameworks to capture how resource tracking overlaps commercial shipping channels.</li>
         </ul>
       </div>
 
-      <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #334155;">
+      <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #334155;">
         <span class="tech-badge" style="background: #1e293b; color: #34d399; border: 1px solid #334155;">R Shiny</span>
         <span class="tech-badge" style="background: #1e293b; color: #38bdf8; border: 1px solid #334155;">Leaflet Spatial</span>
         <span class="tech-badge" style="background: #1e293b; color: #a78bfa; border: 1px solid #334155;">Spatiotemporal Modeling</span>
@@ -265,28 +280,27 @@ title: Riya Biju Ollukaran - Spatial Data Science Portfolio
 
   </div>
 
-
   <!-- RESTRUCTURED CORE METADATA SECTIONS -->
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 5px;">
+  <div class="meta-grid">
     
     <!-- SKILLS MATRIX -->
     <section style="background: #ffffff; border: 1px solid var(--border-gray); padding: 25px; border-radius: 12px;">
-      <h4 style="margin-top: 0; color: var(--dark-slate); font-size: 1.2rem; border-left: 4px solid var(--primary-blue); padding-left: 10px;">Technical Stack Matrix</h4>
-      <ul style="padding-left: 20px; color: var(--body-gray); font-size: 0.95rem;">
-        <li style="margin-bottom: 6px;"><strong>Spatial & Analytics:</strong> ArcGIS, ArcGIS Pro, QGIS, Blender 3D (Cycles Engine), Spatial Analyst toolkit frameworks</li>
-        <li style="margin-bottom: 6px;"><strong>Data Ecosystems:</strong> Python (Pandas, Scikit-Learn), R (Dplyr, Ggplot2), Oracle SQL Developer Database structures</li>
-        <li style="margin-bottom: 6px;"><strong>Operational Tools:</strong> Version Control (GitLab, Git pipeline structures), Jira Management, Excel</li>
+      <h4 style="margin-top: 0; margin-bottom: 15px; color: var(--dark-slate); font-size: 1.2rem; border-left: 4px solid var(--primary-blue); padding-left: 10px;">Technical Stack Matrix</h4>
+      <ul style="padding-left: 20px; color: var(--body-gray); font-size: 0.95rem; margin: 0; gap: 8px; display: flex; flex-direction: column;">
+        <li><strong>Spatial & Analytics:</strong> ArcGIS, ArcGIS Pro, QGIS, Blender 3D (Cycles Engine), Spatial Analyst toolkit frameworks</li>
+        <li><strong>Data Ecosystems:</strong> Python (Pandas, Scikit-Learn), R (Dplyr, Ggplot2), Oracle SQL Developer Database structures</li>
+        <li><strong>Operational Tools:</strong> Version Control (GitLab, Git pipeline structures), Jira Management, Excel</li>
       </ul>
     </section>
 
     <!-- EDUCATION & CERTIFICATIONS -->
     <section style="background: #ffffff; border: 1px solid var(--border-gray); padding: 25px; border-radius: 12px;">
-      <h4 style="margin-top: 0; color: var(--dark-slate); font-size: 1.2rem; border-left: 4px solid var(--primary-green); padding-left: 10px;">Education & Foundations</h4>
+      <h4 style="margin-top: 0; margin-bottom: 15px; color: var(--dark-slate); font-size: 1.2rem; border-left: 4px solid var(--primary-green); padding-left: 10px;">Education & Foundations</h4>
       <p style="margin: 0 0 5px 0; font-size: 0.95rem;"><strong>Master of Data Science</strong> – Monash University (Final Year candidate)</p>
       <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #64748b;"><strong>Bachelor of Economics (Statistics Minor)</strong> – St. Xavier’s College [GPA: 7.83/10]</p>
       
       <span style="font-size: 0.8rem; font-weight: bold; color: #64748b; display: block; text-transform: uppercase; margin-bottom: 5px;">Active Certifications:</span>
-      <div style="font-size: 0.85rem; color: var(--body-gray);">
+      <div style="font-size: 0.85rem; color: var(--body-gray); line-height: 1.5;">
         • ArcGIS for Beginners: Mapping Urban Green Spaces (Coursera, 2026)<br>
         • Python Data Analysis Masterclass (2024) | Python Data Visualization Foundations (2020)
       </div>
@@ -295,8 +309,11 @@ title: Riya Biju Ollukaran - Spatial Data Science Portfolio
   </div>
 
   <!-- FOOTER STAMP -->
-  <footer style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-gray); color: #94a3b8; font-size: 0.85rem;">
+  <footer style="text-align: center; margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border-gray); color: #94a3b8; font-size: 0.85rem;">
     Portfolio Pipeline Architecture & Metadata Assets Verified • Compiled June 2026
   </footer>
 
 </div>
+
+</body>
+</html>
