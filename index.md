@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default 
 title: Riya Biju Ollukaran - Spatial Data Science Portfolio
 ---
 
