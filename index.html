@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Riya Biju Ollukaran - Spatial Data Science Portfolio</title>
-  <!-- Core Portfolio Styling -->
   <style>
     :root {
       --primary-blue: #0284c7;
@@ -83,9 +82,20 @@
 
     .meta-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 30px;
       margin-top: 35px;
+    }
+
+    .edu-item, .cert-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed var(--border-gray);
+    }
+    .edu-item:last-child, .cert-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
     }
 
     @media (max-width: 768px) {
@@ -109,7 +119,7 @@
     <p style="font-size: 1.4rem; color: var(--primary-blue); margin-top: 0; font-weight: 500;">Spatial Data Scientist & 3D Environment Specialist</p>
     
     <p style="max-width: 750px; margin: 20px auto; color: var(--body-gray); font-size: 1.1rem; line-height: 1.7;">
-      Final-Year Master of Data Science Student at Monash University. Fusing Data Science with geospatial mechanics (ArcGIS, QGIS, Blender) to translate spatial telemetry into analytical outcomes.
+      Final-Year Master of Data Science candidate at Monash University. Fusing machine learning and statistical architectures with geospatial mechanics (ArcGIS, QGIS, Blender) to translate spatial telemetry into high-fidelity stakeholder environments.
     </p>
 
     <div style="margin-top: 25px; font-size: 1rem; color: #64748b;">
@@ -132,8 +142,8 @@
   <article class="grid-card">
     <div>
       <span style="font-size: 0.8rem; font-weight: 700; color: #b45309; letter-spacing: 0.05em; text-transform: uppercase;">[High Complexity] Digital Twin Prototype</span>
-      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">Project 1: 3D Geospatial Visualization: Galapagos Archipelago Modelling</h3>
-      <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">The School of Information Design | Instructor: Elizabeth Rosenbloom</p>
+      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">3D Geospatial Visualization: Galapagos Archipelago Case Study</h3>
+      <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">The School of Information Design | Under Instruction of Elisabeth Rosenbloom</p>
       
       <div class="pipeline-box">
         <strong style="display: block; font-size: 0.75rem; color: #64748b; margin-bottom: 5px; text-transform: uppercase;">Data Pipeline Architecture:</strong>
@@ -173,7 +183,7 @@
     
     <div>
       <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary-blue); letter-spacing: 0.05em; text-transform: uppercase;">[Medium Complexity] Land Suitability Analysis</span>
-      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">Project 2: Suitable Sites for Remote Bush Lodges in Northeastern South Africa - Case Study</h3>
+      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">Suitable Sites for Remote Bush Lodges in Northeastern South Africa</h3>
       <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">Monash University | EAE5258 – GIS for Environmental Sciences</p>
       
       <div class="pipeline-box">
@@ -201,8 +211,8 @@
   <article class="grid-card">
     <div>
       <span style="font-size: 0.8rem; font-weight: 700; color: #7c3aed; letter-spacing: 0.05em; text-transform: uppercase;">[Low/Med Complexity] Urban Analytics Matrix</span>
-      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">Project 3: Mapping Urban Green Spaces - San Francisco</h3>
-      <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">Coursera (Guided Project) | The School of Information Design | Instructor: Elizabeth Rosenbloom</p>
+      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">San Francisco Mapping: Urban Green Spaces Project Evaluation</h3>
+      <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">Independent Geospatial Certification Focus</p>
       
       <p style="color: var(--body-gray); margin-top: 15px; margin-bottom: 15px;">
         An urban assessment model checking local public park accessibility thresholds and density distribution spreads across metropolitan San Francisco boundaries. Evaluated infrastructural park access by matching regional civic vectors against community boundaries.
@@ -210,7 +220,7 @@
 
       <ul style="padding-left: 20px; color: var(--body-gray); margin: 0; gap: 8px; display: flex; flex-direction: column;">
         <li>Analyzed neighborhood location access variances by configuring demographic distribution buffers against spatial polygon layouts.</li>
-        <li>Generated spatial scores shown explicitly inside the formal map artifact.</li>
+        <li>Generated spatial scores shown explicitly inside the formal map artifact titled <strong>SF Parks Evaluation.jpg</strong>.</li>
       </ul>
 
       <div style="margin-top: 25px;">
@@ -280,29 +290,81 @@
 
   </div>
 
-  <!-- RESTRUCTURED CORE METADATA SECTIONS -->
+  <!-- SECTION III: EDUCATION, METADATA & CERTIFICATIONS -->
+  <h2 class="section-title" style="color: var(--dark-slate); border-color: var(--dark-slate);">III. Qualifications & Foundations</h2>
+
   <div class="meta-grid">
     
-    <!-- SKILLS MATRIX -->
-    <section style="background: #ffffff; border: 1px solid var(--border-gray); padding: 25px; border-radius: 12px;">
-      <h4 style="margin-top: 0; margin-bottom: 15px; color: var(--dark-slate); font-size: 1.2rem; border-left: 4px solid var(--primary-blue); padding-left: 10px;">Technical Stack Matrix</h4>
-      <ul style="padding-left: 20px; color: var(--body-gray); font-size: 0.95rem; margin: 0; gap: 8px; display: flex; flex-direction: column;">
-        <li><strong>Spatial & Analytics:</strong> ArcGIS, ArcGIS Pro, QGIS, Blender 3D (Cycles Engine), Spatial Analyst toolkit frameworks</li>
-        <li><strong>Data Ecosystems:</strong> Python (Pandas, Scikit-Learn), R (Dplyr, Ggplot2), Oracle SQL Developer Database structures</li>
-        <li><strong>Operational Tools:</strong> Version Control (GitLab, Git pipeline structures), Jira Management, Excel</li>
-      </ul>
+    <!-- EDUCATION SECTION -->
+    <section style="background: #ffffff; border: 1px solid var(--border-gray); padding: 30px; border-radius: 12px; border-top: 4px solid var(--primary-blue); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+      <h4 style="margin-top: 0; margin-bottom: 20px; color: var(--dark-slate); font-size: 1.3rem; font-weight: 800;">Academic History</h4>
+      
+      <div class="edu-item">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <strong style="font-size: 1.1rem; color: var(--dark-slate);">Monash University</strong>
+          <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">Melbourne, AUS</span>
+        </div>
+        <p style="margin: 4px 0; font-weight: 600; color: var(--primary-blue); font-size: 0.95rem;">Master of Data Science (Information Technology)</p>
+        <p style="margin: 8px 0; font-size: 0.9rem; color: var(--body-gray); line-height: 1.5;">
+          <strong>Leadership & Culture:</strong> Actively volunteering with the <em>Monash Graduate Association (MGA)</em> to support the graduate student network ecosystem.
+        </p>
+        <div style="margin-top: 8px; font-size: 0.8rem; color: #64748b;">
+          <strong>Core Competencies:</strong> IT Research Structures • Relational Databases (SQL) • Advanced Spatial Processing
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <strong style="font-size: 1.1rem; color: var(--dark-slate);">St. Xavier's College</strong>
+          <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">Jun 2020 – Apr 2023</span>
+        </div>
+        <p style="margin: 4px 0; font-weight: 600; color: var(--primary-blue); font-size: 0.95rem;">Bachelor in Economics (Statistics & Econometrics Minor)</p>
+        <p style="margin: 2px 0; font-size: 0.9rem; font-weight: 700; color: var(--primary-green);">Grade: O+ (Outstanding)</p>
+        <p style="margin: 8px 0; font-size: 0.9rem; color: var(--body-gray); line-height: 1.5;">
+          <strong>Leadership & Culture:</strong> Selected as a Core Committee Member for the Annual Economics Festival <em>'Cognizance 2023'</em>.
+        </p>
+        <div style="margin-top: 8px; font-size: 0.8rem; color: #64748b;">
+          <strong>Core Competencies:</strong> Operations Research Systems • Advanced Calculus • Statistical Econometrics Matrix Structures
+        </div>
+      </div>
     </section>
 
-    <!-- EDUCATION & CERTIFICATIONS -->
-    <section style="background: #ffffff; border: 1px solid var(--border-gray); padding: 25px; border-radius: 12px;">
-      <h4 style="margin-top: 0; margin-bottom: 15px; color: var(--dark-slate); font-size: 1.2rem; border-left: 4px solid var(--primary-green); padding-left: 10px;">Education & Foundations</h4>
-      <p style="margin: 0 0 5px 0; font-size: 0.95rem;"><strong>Master of Data Science</strong> – Monash University (Final Year candidate)</p>
-      <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #64748b;"><strong>Bachelor of Economics (Statistics Minor)</strong> – St. Xavier’s College [GPA: 7.83/10]</p>
+    <!-- LICENSES & CERTIFICATIONS SECTION -->
+    <section style="background: #ffffff; border: 1px solid var(--border-gray); padding: 30px; border-radius: 12px; border-top: 4px solid var(--primary-green); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+      <h4 style="margin-top: 0; margin-bottom: 20px; color: var(--dark-slate); font-size: 1.3rem; font-weight: 800;">Licenses & Certifications</h4>
       
-      <span style="font-size: 0.8rem; font-weight: bold; color: #64748b; display: block; text-transform: uppercase; margin-bottom: 5px;">Active Certifications:</span>
-      <div style="font-size: 0.85rem; color: var(--body-gray); line-height: 1.5;">
-        • ArcGIS for Beginners: Mapping Urban Green Spaces (Coursera, 2026)<br>
-        • Python Data Analysis Masterclass (2024) | Python Data Visualization Foundations (2020)
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        
+        <!-- Cert 1 -->
+        <div class="cert-item">
+          <strong style="display: block; color: var(--dark-slate); font-size: 1rem;">3D Geospatial Modeling Level 1</strong>
+          <span style="color: #64748b; font-size: 0.85rem;">The School of Information Design • Issued May 2026</span>
+          <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: #475569; font-style: italic;">Verified Portfolio Asset: Galapagos 3D Architectural Topographic Mesh</p>
+          <div style="font-size: 0.8rem; color: var(--primary-blue); font-weight: 700; margin-top: 4px;">Blender 3D Engine • Mesh Extrusion Nodes • Spatial Design</div>
+        </div>
+
+        <!-- Cert 2 -->
+        <div class="cert-item">
+          <strong style="display: block; color: var(--dark-slate); font-size: 1rem;">ArcGIS for Beginners: Mapping Urban Green Spaces</strong>
+          <span style="color: #64748b; font-size: 0.85rem;">Coursera (ID: 7X99EU2ZCG75) • Issued Jan 2026</span>
+          <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: #475569; font-style: italic;">Verified Portfolio Asset: San Francisco Metropolitan Parks Evaluation Map</p>
+          <div style="font-size: 0.8rem; color: var(--primary-green); font-weight: 700; margin-top: 4px;">Geographic Information Systems (GIS) • ArcGIS Software Layouts</div>
+        </div>
+
+        <!-- Cert 3 -->
+        <div class="cert-item">
+          <strong style="display: block; color: var(--dark-slate); font-size: 1rem;">Python Data Analysis & Visualization Masterclass</strong>
+          <span style="color: #64748b; font-size: 0.85rem;">Udemy • Issued Feb 2024</span>
+          <div style="font-size: 0.8rem; color: #7c3aed; font-weight: 700; margin-top: 4px;">Pandas Structures • High-Density Statistical Plots</div>
+        </div>
+
+        <!-- Cert 4 -->
+        <div class="cert-item">
+          <strong style="display: block; color: var(--dark-slate); font-size: 1rem;">Understanding and Visualizing Data with Python</strong>
+          <span style="color: #64748b; font-size: 0.85rem;">University of Michigan | Coursera (ID: CL23CBEB2UHD) • Issued May 2020</span>
+          <div style="font-size: 0.8rem; color: #f59e0b; font-weight: 700; margin-top: 4px;">Descriptive Statistics Engineering • Python Libraries (Matplotlib / Seaborn)</div>
+        </div>
+
       </div>
     </section>
 
