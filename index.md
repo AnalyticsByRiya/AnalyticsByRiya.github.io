@@ -91,7 +91,82 @@ Designed an innovative AI framework for early outbreak spotting using multi-moda
   </div>
 </section>
 
-*(Building more: Next up, a GIS project mapping urban data in City of St.Louis, Missouri with GeoPandas/ArcGIS. Stay tuned!)*
+<section id="portfolio-2026" style="max-width: 1200px; margin: 50px auto; padding: 20px; font-family: 'Inter', -apple-system, sans-serif; color: #1a202c;">
+
+  <div style="margin-bottom: 60px; border-left: 8px solid #0366d6; padding-left: 25px;">
+    <h1 style="font-size: 2.8rem; margin: 0; letter-spacing: -0.02em;">Riya Biju Ollukaran</h1>
+    <h2 style="font-size: 1.4rem; color: #4a5568; margin-top: 5px; font-weight: 400;">Spatial Data Scientist & 3D Environment Specialist</h2>
+    <div style="margin-top: 15px; display: flex; gap: 15px;">
+      <span style="font-weight: 700; color: #0366d6;">STACK:</span>
+      <code>Python • R • SQL (PostGIS) • QGIS • Blender 3D • ArcGIS • ArcGIS Pro</code>
+    </div>
+  </div>
+
+  <div class="Project 1: 3D Galapagos Model" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; margin-bottom: 80px; align-items: start;">
+    <div>
+      <h3 style="font-size: 0.9rem; text-transform: uppercase; color: #0366d6; letter-spacing: 0.1em; margin-bottom: 10px;">[High Complexity] Digital Twin Overlay</h3>
+      <h2 style="font-size: 2rem; margin-top: 0;">3D Geospatial Visualization: Galapagos Archipelago</h2>
+      <p style="color: #4a5568; line-height: 1.7; font-size: 1.1rem;">
+        Elevating static DEM data into an immersive 3D environment. This project demonstrates a cross-platform pipeline ensuring 1:1 topographical integrity.
+      </p>
+      
+      <div style="background: #f8fafc; border: 1px dashed #cbd5e0; padding: 15px; border-radius: 8px; margin: 20px 0;">
+        <strong style="display: block; font-size: 0.8rem; margin-bottom: 10px; color: #718096;">DATA PIPELINE:</strong>
+        <div style="font-family: monospace; font-size: 0.85rem;">
+          Raw DEM (QGIS) ➔ CRS Transformation (WGS 84) ➔ Mesh Extrusion (Blender) ➔ Procedural Node Shading
+        </div>
+      </div>
+
+      <ul style="padding-left: 20px; line-height: 1.8;">
+        <li><strong>Topographical Accuracy:</strong> Resolved unit mismatches using <strong>EPSG:4326</strong> projection.</li>
+        <li><strong>Procedural Texturing:</strong> Engineered noise-based ocean shaders for regional-scale realism.</li>
+      </ul>
+    </div>
+    <div style="position: sticky; top: 20px;">
+      <img src="C:\Users\Riya Biju\Desktop\AnalyticsByRiya.github.io\assets\img\GalapagosRendered.png" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+
+  <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 80px;">
+
+  <div class="Project 2: Site Suitability for Remote Bush Lodges in SA" style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; margin-bottom: 80px; align-items: start;">
+    <div style="position: sticky; top: 20px;">
+      <img src="C:\Users\Riya Biju\Desktop\AnalyticsByRiya.github.io\assets\img\Kruger_Lodge_Suitability_Map.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);">
+    </div>
+    <div>
+      <h3 style="font-size: 0.9rem; text-transform: uppercase; color: #059669; letter-spacing: 0.1em; margin-bottom: 10px;">[Medium Complexity] Suitability Analysis</h3>
+      <h2 style="font-size: 2rem; margin-top: 0;">Multi-Criteria Evaluation (MCE): South Africa Bush Lodges</h2>
+      
+      <div style="background: #f0fff4; border: 1px dashed #9ae6b4; padding: 15px; border-radius: 8px; margin: 20px 0;">
+        <strong style="display: block; font-size: 0.8rem; margin-bottom: 10px; color: #2f855a;">DATA PIPELINE:</strong>
+        <div style="font-family: monospace; font-size: 0.85rem;">
+          7 Spatial Layers ➔ Africa Albers Equal Area Reprojection ➔ Raster Reclassification ➔ Boolean Overlay
+        </div>
+      </div>
+
+      <p style="color: #4a5568; line-height: 1.7;">
+        Standardized 7 distinct datasets to identify 263 viable candidate sites. The analysis prioritized <strong>ecological preservation</strong> and <strong>soil erosion mitigation</strong> across 362 km².
+      </p>
+    </div>
+  </div>
+
+  <div style="background: #1a202c; color: white; padding: 40px; border-radius: 16px; margin-top: 40px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h2 style="margin: 0; color: #63b3ed;">[High Complexity] Spatiotemporal Visualizer</h2>
+      <span style="background: #3182ce; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">ONGOING</span>
+    </div>
+    <h3 style="font-size: 1.8rem; margin-top: 0;">Arctic Circle Change Dashboard</h3>
+    <p style="color: #a0aec0; line-height: 1.7;">
+      Integrating satellite GPS telemetry and ice-extent anomalies into a <strong>Leaflet-based R Shiny app</strong>. This project explores the intersection of habitat loss and maritime traffic trends.
+    </p>
+    <div style="margin-top: 20px; display: flex; gap: 10px;">
+      <span style="border: 1px solid #4a5568; padding: 4px 12px; border-radius: 6px; font-size: 0.8rem;">R Shiny</span>
+      <span style="border: 1px solid #4a5568; padding: 4px 12px; border-radius: 6px; font-size: 0.8rem;">Leaflet</span>
+      <span style="border: 1px solid #4a5568; padding: 4px 12px; border-radius: 6px; font-size: 0.8rem;">H3 Indexing</span>
+    </div>
+  </div>
+
+</section>
 
 ## Skills  
 - **Data Analysis**: pandas, matplotlib, scikit-learn, dplyr, ggplot2, R, D3
