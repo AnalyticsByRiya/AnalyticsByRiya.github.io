@@ -1,190 +1,302 @@
 ---
 layout: default
-title: Riya Biju Ollukaran - Data Science Portfolio
+title: Riya Biju Ollukaran - Spatial Data Science Portfolio
 ---
 
-# Riya Biju Ollukaran's Data Science Portfolio
-<video width="100%" autoplay loop muted playsinline>
-  <source src="/assets/video/GIS Personal LinkedIn Banner.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-**Final-Year Master of Data Science @ Monash University**  
-Exploring geospatial analysis (ArcGIS) alongside core DS skills in Python, R, and SQL. Turning data into insights for public health, business, and beyond.  
-riyabijuollukaran@gmail.com | [LinkedIn](https://www.linkedin.com/in/riya-biju-ollukaran/) | Melbourne  
-
-## About Me
-I'm a data enthusiast with a passion for actionable analytics. Currently pursuing my Master's at Monash University. I blend statistical thinking with tools like pandas, scikit-learn, and ArcGIS to solve real-world problems. 
-
-## Featured Projects
-Focus on what I've built—code, visuals, and impact.
-
-### Project 1: AI-Powered Pandemic Early Detection System
-*Monash University | April–May 2025*  
-Designed an innovative AI framework for early outbreak spotting using multi-modal data (social media trends, wastewater, mobility).  
-- Analyzed CDC FluView data in R (dplyr, ggplot2) → Achieved ~80% sensitivity in anomaly detection.  
-- Proposed AWS cloud deployment and freemium business model for scalability.  
-- Earned Distinction for novelty—full proposal and presentation delivered.  
-![Project Viz](assets/img/pandemic-viz.png) <!-- Upload a screenshot of your ggplot or a mock dashboard -->  
-[View Code/Report](https://github.com/yourusername/pandemic-detection) <!-- Create a separate repo and link it -->  
-
-### Project 2: 3D Galapagos Model
-<!-- 3D Galapagos Project Case Study -->
-<section class="project-case-study" style="max-width: 900px; margin: 40px auto; padding: 30px; border: 1px solid #e1e4e8; border-radius: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+<!-- Core Portfolio Styling -->
+<style>
+  :root {
+    --primary-blue: #0284c7;
+    --primary-green: #059669;
+    --dark-slate: #0f172a;
+    --body-gray: #334155;
+    --light-bg: #f8fafc;
+    --border-gray: #e2e8f0;
+  }
   
-  <!-- Header Block -->
-  <header style="border-bottom: 2px solid #f6f8fa; padding-bottom: 20px; margin-bottom: 25px;">
-    <h2 style="margin: 0 0 10px 0; color: #24292e; font-size: 1.8rem; font-weight: 700;">3D Geospatial Visualization: Galapagos Archipelago Case Study</h2>
-    <p style="margin: 0; color: #586069; font-style: italic; font-size: 0.95rem;">
-      Completed as part of The Ultimate Blender + GIS Workshop at The School of Information Design (Instructor: Elizabeth Rosenbloom).
+  .portfolio-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--dark-slate);
+    line-height: 1.6;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-gray);
+  }
+
+  .grid-card {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    background: #ffffff;
+    border: 1px solid var(--border-gray);
+    border-radius: 16px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 10px 15px -3px rgba(0,0,0,0.03);
+    align-items: start;
+  }
+
+  .grid-card.reverse {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  .pipeline-box {
+    background: var(--light-bg);
+    border: 1px dashed #cbd5e0;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 18px 0;
+  }
+
+  .tech-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+
+  .badge-gis { background: #e0f2fe; color: #0366d6; }
+  .badge-3d { background: #ffedd5; color: #ea580c; }
+  .badge-ds { background: #ecfdf5; color: #059669; }
+  .badge-meta { background: #f1f5f9; color: #475569; }
+
+  @media (max-width: 768px) {
+    .grid-card, .grid-card.reverse {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+    .grid-card .visual-pane {
+      order: -1;
+    }
+  }
+</style>
+
+<div class="portfolio-container">
+
+  <!-- HERO HEADER SECTION -->
+  <header style="text-align: center; padding: 40px 0 20px 0; margin-bottom: 40px;">
+    <h1 style="font-size: 3rem; font-weight: 800; color: var(--dark-slate); margin-bottom: 5px; letter-spacing: -0.03em;">Riya Biju Ollukaran</h1>
+    <p style="font-size: 1.3rem; color: var(--primary-blue); margin-top: 0; font-weight: 500;">Spatial Data Scientist & 3D Environment Specialist</p>
+    
+    <p style="max-width: 750px; margin: 20px auto; color: var(--body-gray); font-size: 1.1rem;">
+      Final-Year Master of Data Science student at Monash University. Fusing Data Science with geospatial mechanics (ArcGIS, QGIS, Blender) to translate spatial telemetry into high-fidelity environments.
     </p>
-    <div class="tech-tags" style="margin-top: 15px;">
-      <span style="background: #eef9ff; color: #0366d6; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-right: 8px; border: 1px solid #c8e1ff;">QGIS</span>
-      <span style="background: #fff5ea; color: #bf6000; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-right: 8px; border: 1px solid #ffe3c6;">Blender 3D</span>
-      <span style="background: #f3f4f6; color: #4b5563; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-right: 8px;">WGS 84 (EPSG:4326)</span>
-      <span style="background: #f5f3ff; color: #6d28d9; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">DEM Modeling</span>
+
+    <div style="margin-top: 15px; font-size: 0.95rem; color: #64748b;">
+      📍 Melbourne, Australia | ✉️ riyabijuollukaran@gmail.com | 🔗 <a href="https://www.linkedin.com/in/riya-biju-ollukaran/" target="_blank" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">LinkedIn</a>
     </div>
   </header>
 
-  <!-- Image Grid (Displays 3 images side-by-side cleanly) -->
-  <div class="project-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px;">
-    <div style="background: #f6f8fa; border-radius: 8px; overflow: hidden; border: 1px solid #e1e4e8;">
-      <!-- Image 1: Rendered image -->
-      <img src="C:\Users\Riya Biju\Desktop\AnalyticsByRiya.github.io\assets\img\GalapagosRendered.png" alt="Galapagos 3D Render View 1" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-    </div>
-    <div style="background: #f6f8fa; border-radius: 8px; overflow: hidden; border: 1px solid #e1e4e8;">
-      <!-- Image 2: Galapagos DEM -->
-      <img src="C:\Users\Riya Biju\Desktop\AnalyticsByRiya.github.io\assets\img\v2_Galapagos_DEM.png" alt="Galapagos 3D Render View 2" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-    </div>
-    <div style="background: #f6f8fa; border-radius: 8px; overflow: hidden; border: 1px solid #e1e4e8;">
-      <!-- Image 3: Blender Screenshot -->
-      <img src="C:\Users\Riya Biju\Desktop\AnalyticsByRiya.github.io\assets\img\BlenderScreenSS.png" alt="GIS Baseline Mapping" style="width: 100%; height: 200px; object-fit: cover; display: block;">
-    </div>
+  <!-- BANNER MEDIA CONTAINER -->
+  <div style="width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 5px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);">
+    <video width="100%" autoplay loop muted playsinline style="display: block;">
+      <source src="assets/video/GIS Personal LinkedIn Banner.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 
-  <!-- Case Study Body Content -->
-  <div class="case-study-content" style="color: #24292e; line-height: 1.6; font-size: 1rem;">
-    <h3 style="color: #0366d6; font-size: 1.2rem; margin-top: 0; margin-bottom: 15px; border-left: 4px solid #0366d6; padding-left: 10px;">Technical Milestones & Methodology</h3>
-    
-    <ul style="list-style-type: none; padding: 0; margin: 0;">
-      <li style="margin-bottom: 15px;">
-        <strong>🌍 Coordinate System Management & Data Alignment</strong><br>
-        Resolved critical software unit mismatches by proactively re-projecting geographic layers to WGS 84 (EPSG:4326), successfully aligning real-world geographic coordinates with Blender's absolute 3D metric workspace.
-      </li>
-      <li style="margin-bottom: 15px;">
-        <strong>🗺️ GIS-to-3D Integration Pipeline</strong><br>
-        Mastered a multi-software data pipeline to import georeferenced vectors and layers cleanly from QGIS into Blender, preserving spatial data integrity while elevating static maps into interactive, immersive 3D spatial environments.
-      </li>
-      <li style="margin-bottom: 15px;">
-        <strong>🌋 High-Fidelity Topographical Accuracy</strong><br>
-        Utilized Digital Elevation Models (DEM) to accurately extrude terrain geometries. Leveraged advanced Subdivision Surface workflows and Displacement Modifiers to realistically reconstruct intricate volcanic landmasses.
-      </li>
-      <li style="margin-bottom: 15px;">
-        <strong>🌊 Procedural Shading & Mathematical Texturing</strong><br>
-        Engineered a highly specialized, node-based procedural shading network for environmental assets. Designed custom noise-texture models paired with Object-Space mapping coordinates to realistically simulate wave pattern scales across expansive regional marine environments.
-      </li>
-      <li style="margin-bottom: 15px;">
-        <strong>📈 Strategic Communication & Stakeholder Delivery</strong><br>
-        Tailored visual outputs to address a high-stakes corporate objective: crafting premium publicity models and technical demonstrations intended to ignite strategic interest from institutional investors for conservation technology deployment.
-      </li>
-    </ul>
-  </div>
-</section>
+  <!-- SECTION I: GEOSPATIAL & 3D TOPOGRAPHIC MODELING -->
+  <h2 class="section-title" style="color: var(--primary-blue); border-color: var(--primary-blue);">I. Geospatial Analysis & 3D Topographic Modeling</h2>
 
-<section id="portfolio-2026" style="max-width: 1200px; margin: 50px auto; padding: 20px; font-family: 'Inter', -apple-system, sans-serif; color: #1a202c;">
-
-  <div style="margin-bottom: 60px; border-left: 8px solid #0366d6; padding-left: 25px;">
-    <h1 style="font-size: 2.8rem; margin: 0; letter-spacing: -0.02em;">Riya Biju Ollukaran</h1>
-    <h2 style="font-size: 1.4rem; color: #4a5568; margin-top: 5px; font-weight: 400;">Spatial Data Scientist & 3D Environment Specialist</h2>
-    <div style="margin-top: 15px; display: flex; gap: 15px;">
-      <span style="font-weight: 700; color: #0366d6;">STACK:</span>
-      <code>Python • R • SQL (PostGIS) • QGIS • Blender 3D • ArcGIS • ArcGIS Pro</code>
-    </div>
-  </div>
-
-  <div class="Project 1: 3D Galapagos Model" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; margin-bottom: 80px; align-items: start;">
+  <!-- PROJECT 1: Galapagos 3D Modeling (Digital Twin Frame) -->
+  <article class="grid-card">
     <div>
-      <h3 style="font-size: 0.9rem; text-transform: uppercase; color: #0366d6; letter-spacing: 0.1em; margin-bottom: 10px;">[High Complexity] Digital Twin Overlay</h3>
-      <h2 style="font-size: 2rem; margin-top: 0;">3D Geospatial Visualization: Galapagos Archipelago</h2>
-      <p style="color: #4a5568; line-height: 1.7; font-size: 1.1rem;">
-        Elevating static DEM data into an immersive 3D environment. This project demonstrates a cross-platform pipeline ensuring 1:1 topographical integrity.
-      </p>
+      <span style="font-size: 0.8rem; font-weight: 700; color: #b45309; letter-spacing: 0.05em; text-transform: uppercase;">[High Complexity] Digital Twin Prototype</span>
+      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">3D Geospatial Visualization: Galapagos Archipelago Case Study</h3>
+      <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">The School of Information Design | Under Instruction of Elizabeth Rosenbloom</p>
       
-      <div style="background: #f8fafc; border: 1px dashed #cbd5e0; padding: 15px; border-radius: 8px; margin: 20px 0;">
-        <strong style="display: block; font-size: 0.8rem; margin-bottom: 10px; color: #718096;">DATA PIPELINE:</strong>
-        <div style="font-family: monospace; font-size: 0.85rem;">
-          Raw DEM (QGIS) ➔ CRS Transformation (WGS 84) ➔ Mesh Extrusion (Blender) ➔ Procedural Node Shading
+      <div class="pipeline-box">
+        <strong style="display: block; font-size: 0.75rem; color: #64748b; margin-bottom: 5px; text-transform: uppercase;">Data Pipeline Architecture:</strong>
+        <div style="font-family: monospace; font-size: 0.85rem; color: #0f172a;">
+          Raw Raster DEM ➔ Coordinate Alignment (WGS 84 / EPSG:4326) ➔ Mesh Extrusion (Blender Modifiers) ➔ Procedural Node Displacement Shading
         </div>
       </div>
 
-      <ul style="padding-left: 20px; line-height: 1.8;">
-        <li><strong>Topographical Accuracy:</strong> Resolved unit mismatches using <strong>EPSG:4326</strong> projection.</li>
-        <li><strong>Procedural Texturing:</strong> Engineered noise-based ocean shaders for regional-scale realism.</li>
+      <ul style="padding-left: 20px; color: var(--body-gray);">
+        <li style="margin-bottom: 8px;"><strong>Pipeline Engineering:</strong> Built an uncompressed, non-destructive spatial asset extraction process to translate raw GIS elevation models directly into structural render meshes.</li>
+        <li style="margin-bottom: 8px;"><strong>Topographical Alignment:</strong> Resolved systemic software unit-mismatches by re-projecting base source layers to ensure geographic coordinate accuracy.</li>
+        <li style="margin-bottom: 8px;"><strong>Procedural Node Development:</strong> Engineered complex, object-space procedural shader nodes within Blender to accurately model micro-wave pattern distributions across deep water interfaces.</li>
       </ul>
-    </div>
-    <div style="position: sticky; top: 20px;">
-      <img src="C:\Users\Riya Biju\Desktop\AnalyticsByRiya.github.io\assets\img\GalapagosRendered.png" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);">
-    </div>
-  </div>
 
-  <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 80px;">
-
-  <div class="Project 2: Site Suitability for Remote Bush Lodges in SA" style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; margin-bottom: 80px; align-items: start;">
-    <div style="position: sticky; top: 20px;">
-      <img src="C:\Users\Riya Biju\Desktop\AnalyticsByRiya.github.io\assets\img\Kruger_Lodge_Suitability_Map.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);">
+      <div style="margin-top: 15px;">
+        <span class="tech-badge badge-gis">QGIS</span>
+        <span class="tech-badge badge-3d">Blender 3D</span>
+        <span class="tech-badge badge-gis">DEM Modeling</span>
+        <span class="tech-badge badge-meta">WGS 84</span>
+      </div>
     </div>
+    
+    <div class="visual-pane" style="display: flex; flex-direction: column; gap: 10px;">
+      <img src="assets/img/GalapagosRendered.png" alt="Galapagos 3D Render View" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-gray);">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <img src="assets/img/v2_Galapagos_DEM.png" alt="Galapagos DEM Spatial File" style="width: 100%; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-gray);">
+        <img src="assets/img/BlenderScreenSS.png" alt="Blender Mapping Interface" style="width: 100%; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-gray);">
+      </div>
+    </div>
+  </article>
+
+  <!-- PROJECT 2: South Africa Bush Lodges MCE -->
+  <article class="grid-card reverse">
+    <div class="visual-pane">
+      <img src="assets/img/Kruger_Lodge_Suitability_Map.jpg" alt="South Africa Bush Lodge Suitability Analysis Output Map" style="width: 100%; border-radius: 12px; border: 1px solid var(--border-gray); box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    </div>
+    
     <div>
-      <h3 style="font-size: 0.9rem; text-transform: uppercase; color: #059669; letter-spacing: 0.1em; margin-bottom: 10px;">[Medium Complexity] Suitability Analysis</h3>
-      <h2 style="font-size: 2rem; margin-top: 0;">Multi-Criteria Evaluation (MCE): South Africa Bush Lodges</h2>
+      <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary-blue); letter-spacing: 0.05em; text-transform: uppercase;">[Medium Complexity] Land Suitability Analysis</span>
+      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">Suitable Sites for Remote Bush Lodges in Northeastern South Africa</h3>
+      <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">Monash University | EAE5258 – GIS for Environmental Sciences</p>
       
-      <div style="background: #f0fff4; border: 1px dashed #9ae6b4; padding: 15px; border-radius: 8px; margin: 20px 0;">
-        <strong style="display: block; font-size: 0.8rem; margin-bottom: 10px; color: #2f855a;">DATA PIPELINE:</strong>
-        <div style="font-family: monospace; font-size: 0.85rem;">
-          7 Spatial Layers ➔ Africa Albers Equal Area Reprojection ➔ Raster Reclassification ➔ Boolean Overlay
+      <div class="pipeline-box">
+        <strong style="display: block; font-size: 0.75rem; color: #64748b; margin-bottom: 5px; text-transform: uppercase;">Data Pipeline Architecture:</strong>
+        <div style="font-family: monospace; font-size: 0.85rem; color: #0f172a;">
+          7 Vector/Raster Inputs ➔ Africa Albers Equal Area Projection ➔ Topo to Raster DEM Integration ➔ Multi-Criteria Reclassification ➔ Boolean Overlay
         </div>
       </div>
 
-      <p style="color: #4a5568; line-height: 1.7;">
-        Standardized 7 distinct datasets to identify 263 viable candidate sites. The analysis prioritized <strong>ecological preservation</strong> and <strong>soil erosion mitigation</strong> across 362 km².
+      <ul style="padding-left: 20px; color: var(--body-gray);">
+        <li style="margin-bottom: 8px;"><strong>Multi-Criteria Evaluation (MCE):</strong> Standardized 7 separate datasets by resolving structural vector defects and coordinate shifts across administrative maps.</li>
+        <li style="margin-bottom: 8px;"><strong>Terrain Derivation:</strong> Extracted continuous slope gradients and directional aspect configurations using spatial mathematical matrices from contours.</li>
+        <li style="margin-bottom: 8px;"><strong>Environmental Filtering:</strong> Executed raster calculator logic loops and mathematical constraints, identifying 263 low-impact environmental candidate locations across the Kruger National Park layout.</li>
+      </ul>
+
+      <div style="margin-top: 15px;">
+        <span class="tech-badge badge-gis">ArcGIS Pro</span>
+        <span class="tech-badge badge-gis">Spatial Analyst</span>
+        <span class="tech-badge badge-meta">MCE Matrix</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- PROJECT 3: San Francisco Greenspace Analysis -->
+  <article class="grid-card">
+    <div>
+      <span style="font-size: 0.8rem; font-weight: 700; color: #7c3aed; letter-spacing: 0.05em; text-transform: uppercase;">[Low/Med Complexity] Urban Analytics Matrix</span>
+      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">San Francisco Mapping: Urban Green Spaces Project Evaluation</h3>
+      <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">Independent Geospatial Certification Focus</p>
+      
+      <p style="color: var(--body-gray); margin-top: 15px;">
+        An urban assessment model checking local public park accessibility thresholds and density distribution spreads across metropolitan San Francisco boundaries. Evaluated infrastructural park access by matching regional civic vectors against community boundaries.
       </p>
+
+      <ul style="padding-left: 20px; color: var(--body-gray);">
+        <li style="margin-bottom: 8px;">Analyzed neighborhood location access variances by configuring demographic distribution buffers against spatial polygon layouts.</li>
+        <li style="margin-bottom: 8px;">Generated spatial scores shown explicitly inside the formal map artifact titled <strong>SF Parks Evaluation.jpg</strong>.</li>
+      </ul>
+
+      <div style="margin-top: 25px;">
+        <span class="tech-badge badge-gis">ArcGIS</span>
+        <span class="tech-badge badge-meta">Urban Networks</span>
+        <a href="https://coursera.org/share/444f44ed46f7be52f5736cf9c1595938" target="_blank" style="margin-left: 10px; font-size: 0.85rem; color: var(--primary-blue); font-weight: 700; text-decoration: none;">Verify Credential ↗</a>
+      </div>
     </div>
+    
+    <div class="visual-pane">
+      <img src="assets/img/SF Parks Evaluation.jpg" alt="SF Parks Evaluation.jpg Asset Map Page" style="width: 100%; border-radius: 12px; border: 1px solid var(--border-gray); box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    </div>
+  </article>
+
+
+  <!-- SECTION II: DATA SCIENCE FRAMEWORKS & SPATIOTEMPORAL DASHBOARDS -->
+  <h2 class="section-title" style="color: var(--primary-green); border-color: var(--primary-green);">II. Data Science & Narrative Dashboards</h2>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 30px; margin-bottom: 5px;">
+    
+    <!-- PROJECT 4: AI Outbreak Spotting (Data Science Module) -->
+    <article style="background: #ffffff; border: 1px solid var(--border-gray); border-radius: 16px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;">
+          <h3 style="margin: 0; font-size: 1.4rem; color: var(--dark-slate);">AI-Powered Pandemic Early Detection System</h3>
+          <span style="color: #64748b; font-size: 0.85rem; font-weight: 600;">Monash University</span>
+        </div>
+        <p style="color: var(--body-gray); font-size: 0.95rem; line-height: 1.6;">
+          Engineered an analytics architecture model utilizing multi-stream inputs (wastewater, mobility logs, historical patterns) to pinpoint initial public health anomalies. 
+        </p>
+        <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--body-gray);">
+          <li style="margin-bottom: 6px;">Evaluated deep historical CDC FluView tracking layers using R frameworks (`dplyr`, `ggplot2`).</li>
+          <li style="margin-bottom: 6px;">Achieved an ~80% analytical sensitivity metric across early anomaly signal variations, earning academic Distinction.</li>
+        </ul>
+      </div>
+      
+      <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-gray);">
+        <span class="tech-badge badge-ds">R Core</span>
+        <span class="tech-badge badge-ds">Time-Series</span>
+        <span class="tech-badge badge-meta">Predictive Modeling</span>
+      </div>
+    </article>
+
+    <!-- PROJECT 5: Arctic Circle Change (Spatiotemporal Track) -->
+    <article style="background: var(--dark-slate); color: #ffffff; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid var(--primary-green);">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <h3 style="margin: 0; font-size: 1.4rem; color: #ffffff;">Arctic Circle Environmental Change Visualizer</h3>
+          <span style="background: #b91c1c; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;">ONGOING DEVELOPER PIPELINE</span>
+        </div>
+        <p style="color: #94a3b8; font-size: 0.95rem; font-weight: 500;">Monash University | FIT5147 – Data Visualization Focus</p>
+        
+        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-top: 15px;">
+          Designing an interactive narrative visualization application engine to explore the overlapping environmental impacts of systemic polar shifts.
+        </p>
+        <ul style="padding-left: 20px; font-size: 0.9rem; color: #cbd5e1;">
+          <li style="margin-bottom: 6px;">Consolidating long-term spatio-temporal logs tracking sea ice anomalies (1978–2026) alongside satellite GPS coordinates.</li>
+          <li style="margin-bottom: 6px;">Integrating synchronized dashboards deploying active Leaflet mapping frameworks to capture how resource tracking overlaps commercial shipping channels.</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #334155;">
+        <span class="tech-badge" style="background: #1e293b; color: #34d399; border: 1px solid #334155;">R Shiny</span>
+        <span class="tech-badge" style="background: #1e293b; color: #38bdf8; border: 1px solid #334155;">Leaflet Spatial</span>
+        <span class="tech-badge" style="background: #1e293b; color: #a78bfa; border: 1px solid #334155;">Spatiotemporal Modeling</span>
+      </div>
+    </article>
+
   </div>
 
-  <div style="background: #1a202c; color: white; padding: 40px; border-radius: 16px; margin-top: 40px;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-      <h2 style="margin: 0; color: #63b3ed;">[High Complexity] Spatiotemporal Visualizer</h2>
-      <span style="background: #3182ce; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">ONGOING</span>
-    </div>
-    <h3 style="font-size: 1.8rem; margin-top: 0;">Arctic Circle Change Dashboard</h3>
-    <p style="color: #a0aec0; line-height: 1.7;">
-      Integrating satellite GPS telemetry and ice-extent anomalies into a <strong>Leaflet-based R Shiny app</strong>. This project explores the intersection of habitat loss and maritime traffic trends.
-    </p>
-    <div style="margin-top: 20px; display: flex; gap: 10px;">
-      <span style="border: 1px solid #4a5568; padding: 4px 12px; border-radius: 6px; font-size: 0.8rem;">R Shiny</span>
-      <span style="border: 1px solid #4a5568; padding: 4px 12px; border-radius: 6px; font-size: 0.8rem;">Leaflet</span>
-      <span style="border: 1px solid #4a5568; padding: 4px 12px; border-radius: 6px; font-size: 0.8rem;">H3 Indexing</span>
-    </div>
+
+  <!-- RESTRUCTURED CORE METADATA SECTIONS -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 5px;">
+    
+    <!-- SKILLS MATRIX -->
+    <section style="background: #ffffff; border: 1px solid var(--border-gray); padding: 25px; border-radius: 12px;">
+      <h4 style="margin-top: 0; color: var(--dark-slate); font-size: 1.2rem; border-left: 4px solid var(--primary-blue); padding-left: 10px;">Technical Stack Matrix</h4>
+      <ul style="padding-left: 20px; color: var(--body-gray); font-size: 0.95rem;">
+        <li style="margin-bottom: 6px;"><strong>Spatial & Analytics:</strong> ArcGIS, ArcGIS Pro, QGIS, Blender 3D (Cycles Engine), Spatial Analyst toolkit frameworks</li>
+        <li style="margin-bottom: 6px;"><strong>Data Ecosystems:</strong> Python (Pandas, Scikit-Learn), R (Dplyr, Ggplot2), Oracle SQL Developer Database structures</li>
+        <li style="margin-bottom: 6px;"><strong>Operational Tools:</strong> Version Control (GitLab, Git pipeline structures), Jira Management, Excel</li>
+      </ul>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section style="background: #ffffff; border: 1px solid var(--border-gray); padding: 25px; border-radius: 12px;">
+      <h4 style="margin-top: 0; color: var(--dark-slate); font-size: 1.2rem; border-left: 4px solid var(--primary-green); padding-left: 10px;">Education & Foundations</h4>
+      <p style="margin: 0 0 5px 0; font-size: 0.95rem;"><strong>Master of Data Science</strong> – Monash University (Final Year candidate)</p>
+      <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #64748b;"><strong>Bachelor of Economics (Statistics Minor)</strong> – St. Xavier’s College [GPA: 7.83/10]</p>
+      
+      <span style="font-size: 0.8rem; font-weight: bold; color: #64748b; display: block; text-transform: uppercase; margin-bottom: 5px;">Active Certifications:</span>
+      <div style="font-size: 0.85rem; color: var(--body-gray);">
+        • ArcGIS for Beginners: Mapping Urban Green Spaces (Coursera, 2026)<br>
+        • Python Data Analysis Masterclass (2024) | Python Data Visualization Foundations (2020)
+      </div>
+    </section>
+
   </div>
 
-</section>
+  <!-- FOOTER STAMP -->
+  <footer style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-gray); color: #94a3b8; font-size: 0.85rem;">
+    Portfolio Pipeline Architecture & Metadata Assets Verified • Compiled June 2026
+  </footer>
 
-## Skills  
-- **Data Analysis**: pandas, matplotlib, scikit-learn, dplyr, ggplot2, R, D3
-- **Geospatial/GIS**: ArcGIS (mapping, spatial analysis), ArcGIS Pro, Blender
-- **Tools**: Oracle SQL Developer, GitLab, Excel, Canva, Jira  
-
-## Education & Certifications
-**Master of Data Science** – Monash University (2024–current) 
-**Bachelor of Economics** (Statistics-Minor) – St. Xavier’s College (2020–2023)  
-- GPA: 7.83/10  
-
-**Certifications:**  
-- Understanding & Visualizing Data with Python (Coursera, 2020)  
-- Python Data Analysis Masterclass (Udemy, 2024)
-- ArcGIS for Beginners: Mapping Urban Green Spaces (Coursera, 2026)
-
-## Leadership & Community
-- **Cognizance 2023 Organizer** (St. Xavier’s, College): Led event planning for 294 participants; designed promo materials in Canva; managed social media & logistics.  
-- **Volunteering**: MGA-Monash Graduate Association (2025–present); Church Youth Group (2021–2023)—event coordination & community building.  
-
-*Updated June 2026*
+</div>
