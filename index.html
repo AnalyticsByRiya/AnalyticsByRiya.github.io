@@ -3,324 +3,478 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Riya Biju Ollukaran - Spatial Data Terminal</title>
+  <title>Riya Biju Ollukaran - Spatial Data Science Portfolio</title>
   <style>
     :root {
-      --bg-dark: #070f19;
-      --panel-dark: #0f1d2e;
-      --terminal-black: #050b12;
-      --accent-green: #0df2c9;
-      --accent-blue: #38bdf8;
-      --accent-orange: #fb923c;
-      --text-light: #f1f5f9;
-      --text-muted: #64748b;
-      --border-glow: #1e293b;
+      --primary-blue: #0284c7;
+      --primary-green: #059669;
+      --dark-slate: #0f172a;
+      --body-gray: #334155;
+      --light-bg: #f8fafc;
+      --border-gray: #e2e8f0;
+      --code-bg: #0b2239;
     }
-
-    * {
-      box-sizing: border-box;
+    
+    body {
       margin: 0;
       padding: 0;
+      background-color: var(--light-bg);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--dark-slate);
+      -webkit-font-smoothing: antialiased;
     }
 
-    body {
-      background-color: var(--bg-dark);
-      font-family: 'SF Mono', Monaco, Consolas, 'Liberation Mono', Courier, monospace;
-      color: var(--text-light);
-      padding: 20px;
+    .portfolio-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 60px;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border-gray);
+    }
+
+    .grid-card {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-radius: 16px;
+      padding: 35px;
+      margin-bottom: 35px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 10px 15px -3px rgba(0,0,0,0.03);
+      align-items: start;
+    }
+
+    .grid-card.reverse {
+      grid-template-columns: 0.8fr 1.2fr;
+    }
+
+    .featured-card {
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-top: 4px solid var(--primary-green);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 35px;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+    }
+
+    .pipeline-box {
+      background: var(--light-bg);
+      border: 1px dashed #cbd5e0;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 18px 0;
+    }
+
+    .interactive-details {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 15px 0;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .interactive-details:hover {
+      background: #e2e8f0;
+    }
+
+    .interactive-details summary {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dark-slate);
+      outline: none;
+      user-select: none;
+    }
+
+    .code-snippet {
+      background: var(--code-bg);
+      color: #e2e8f0;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 10px;
+      overflow-x: auto;
       line-height: 1.5;
     }
 
-    .workspace-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* VIRTUAL TERMINAL HEADER */
-    header {
-      background: var(--panel-dark);
-      border: 1px solid var(--border-glow);
-      border-radius: 8px;
-      padding: 30px;
-      margin-bottom: 30px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
-    }
-
-    .terminal-title {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--accent-green);
-      margin-bottom: 10px;
-    }
-
-    .live-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      background: rgba(13, 242, 201, 0.1);
-      color: var(--accent-green);
-      padding: 4px 10px;
-      border-radius: 4px;
-      margin-bottom: 15px;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background-color: var(--accent-green);
-      border-radius: 50%;
-      animation: blink 1.5s infinite;
-    }
-
-    /* LIVE LIVE CONSOLE SIMULATOR */
-    .interactive-console {
-      background: var(--terminal-black);
-      border: 1px solid #334155;
-      border-radius: 6px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .console-line {
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-    }
-
-    .console-prompt {
-      color: var(--accent-blue);
-    }
-
-    .console-input {
-      background: transparent;
-      border: none;
-      color: var(--accent-green);
-      font-family: inherit;
-      font-size: inherit;
-      width: 70%;
-      outline: none;
-    }
-
-    .console-hint {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      margin-top: 10px;
-    }
-
-    /* GRID WORKSPACE LAYOUT */
-    .section-title {
-      font-size: 1.2rem;
-      color: var(--accent-blue);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin: 40px 0 20px 0;
-      border-bottom: 1px dashed #334155;
-      padding-bottom: 5px;
-    }
-
-    .interactive-card {
-      background: var(--panel-dark);
-      border: 1px solid var(--border-glow);
-      border-radius: 8px;
-      padding: 25px;
-      margin-bottom: 25px;
-      transition: all 0.3s ease;
-    }
-
-    .interactive-card:hover {
-      border-color: var(--accent-blue);
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #1e293b;
-      padding-bottom: 12px;
-      margin-bottom: 15px;
-    }
-
-    .card-title {
-      font-size: 1.3rem;
-      color: #ffffff;
-    }
-
-    .interactive-trigger {
-      background: rgba(56, 189, 248, 0.1);
-      color: var(--accent-blue);
-      border: 1px solid var(--accent-blue);
-      padding: 6px 12px;
-      font-size: 0.8rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .interactive-trigger:hover {
-      background: var(--accent-blue);
-      color: var(--terminal-black);
-    }
-
-    .hidden-panel {
-      display: none;
-      background: var(--terminal-black);
-      border-left: 3px solid var(--accent-green);
-      padding: 15px;
-      margin-top: 15px;
-      border-radius: 0 4px 4px 0;
-      font-size: 0.85rem;
-    }
-
-    .badge {
+    .tech-badge {
       display: inline-block;
-      font-size: 0.75rem;
-      padding: 2px 8px;
-      border-radius: 4px;
-      margin-right: 5px;
-      background: #1e293b;
-      color: var(--text-light);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      text-decoration: none;
     }
 
-    .badge-core { background: rgba(251, 146, 60, 0.15); color: var(--accent-orange); }
+    .badge-gis { background: #e0f2fe; color: #0366d6; }
+    .badge-3d { background: #ffedd5; color: #ea580c; }
+    .badge-ds { background: #ecfdf5; color: #059669; }
+    .badge-meta { background: #f1f5f9; color: #475569; }
+    .badge-live { background: #ffe4e6; color: #e11d48; border: 1px solid #f43f5e; animation: pulse 2s infinite; }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      margin-top: 35px;
+    }
+
+    .inner-feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .edu-item, .cert-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed var(--border-gray);
+    }
+    .edu-item:last-child, .cert-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    @media (max-width: 768px) {
+      .grid-card, .grid-card.reverse, .meta-grid, .inner-feature-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+      .grid-card .visual-pane {
+        order: -1;
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="workspace-container">
+<div class="portfolio-container">
 
-  <header>
-    <div class="live-status">
-      <div class="status-dot"></div> WORKSPACE STATUS: ONLINE // MELBOURNE, AUS
-    </div>
-    <div class="terminal-title">RIYA_BIJU_OLLUKARAN // SPATIAL_DATA_TERMINAL</div>
-    <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 20px;">
-      Master of Data Science candidate at Monash University. Resolving spatiotemporal realties, 3D topographical environments, and analytical pipeline architectures.
-    </p>
+  <header style="text-align: center; padding: 20px 0; margin-bottom: 40px;">
+    <h1 style="font-size: 3.2rem; font-weight: 800; color: var(--dark-slate); margin: 0 0 10px 0; letter-spacing: -0.03em;">Riya Biju Ollukaran</h1>
+    <p style="font-size: 1.4rem; color: var(--primary-blue); margin-top: 0; font-weight: 500;">Spatial Data Science Enthusiast</p>
     
-    <div class="interactive-console">
-      <div class="console-line"><span class="console-prompt">visitor@portfolio:~$</span> system_init --load-assets</div>
-      <div class="console-line" style="color: var(--text-muted);">[OK] Initialized spatial engines (ArcGIS Pro, Leaflet, Blender, Shiny)</div>
-      <div class="console-line"><span class="console-prompt">visitor@portfolio:~$</span> query_dataset --target <span style="color: var(--accent-orange);">"arctic_shipping"</span></div>
-      <div class="console-line" id="consoleOutput" style="color: var(--accent-green);">// Output channel idle. Type 'help' or click a dataset query tool below.</div>
-      <div class="console-line"><span class="console-prompt">visitor@portfolio:~$</span> <input type="text" id="terminalInput" class="console-input" placeholder="Type command (e.g., help, stats, clear) or interact below..." autocomplete="off"></div>
+    <p style="max-width: 750px; margin: 20px auto; color: var(--body-gray); font-size: 1.1rem; line-height: 1.7;">
+      Master of Data Science student at Monash University. 
+      I focus on combining complex data science pipelines (Python, R, SQL) with advanced geospatial workflows 
+      (ArcGIS Pro, QGIS, Blender) to build immersive 3D environments, test spatiotemporal realities, and engineer narrative analytics dashboards.
+    </p>
+
+    <div style="margin-top: 25px; font-size: 1rem; color: #64748b;">
+      📍 Melbourne, Australia &nbsp;|&nbsp; ✉️ <a href="mailto:riyabijuollukaran@gmail.com" style="color: var(--body-gray); text-decoration: none;">riyabijuollukaran@gmail.com</a> &nbsp;|&nbsp; 🔗 <a href="https://www.linkedin.com/in/riya-biju-ollukaran/" target="_blank" style="color: var(--primary-blue); text-decoration: none; font-weight: 600;">LinkedIn</a>
     </div>
   </header>
 
-  <div class="section-title">01 / Spatiotemporal Analytics Environments</div>
+  <div style="width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); background: #000;">
+    <video width="100%" autoplay loop muted playsinline style="display: block;">
+      <source src="assets/video/GIS Personal LinkedIn Banner.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-  <div class="interactive-card">
-    <div class="card-header">
-      <div class="card-title">Arctic Circle Environmental Change Visualizer</div>
-      <button class="interactive-trigger" onclick="toggleEngine('arcticPanel', 'query_dataset --target arctic_shipping')">Execute Engine Matrix</button>
-    </div>
-    <p style="font-size: 0.9rem; margin-bottom: 15px;">Full-stack interactive analysis application modeling shipping lane growth against temporal sea ice shrinkage baselines.</p>
+  <h2 class="section-title" style="color: var(--primary-blue); border-color: var(--primary-blue);">I. Geospatial Analysis & 3D Topographic Modeling</h2>
+
+  <article class="grid-card">
     <div>
-      <span class="badge badge-core">R Shiny Core</span>
-      <span class="badge">Leaflet Mapping Engine</span>
-      <span class="badge">Plotly Visual Matrix</span>
-    </div>
+      <span style="font-size: 0.8rem; font-weight: 700; color: #b45309; letter-spacing: 0.05em; text-transform: uppercase;">[High Complexity] Digital Twin Prototype</span>
+      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">Project 1: 3D Geospatial Visualization: Galapagos Archipelago Modelling</h3>
+      <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">The School of Information Design | Instructor: Elisabeth Rosenbloom</p>
+      
+      <div class="pipeline-box">
+        <strong style="display: block; font-size: 0.75rem; color: #64748b; margin-bottom: 5px; text-transform: uppercase;">Data Pipeline Architecture:</strong>
+        <div style="font-family: monospace; font-size: 0.85rem; color: #0f172a;">
+          Raw Raster DEM ➔ Coordinate Alignment (WGS 84 / EPSG:4326) ➔ Mesh Extrusion (Blender Modifiers) ➔ Procedural Node Displacement Shading
+        </div>
+      </div>
 
-    <div id="arcticPanel" class="hidden-panel">
-      <div style="color: var(--accent-blue); margin-bottom: 8px;">&gt;&gt; RUNNING ACTIVE SPATIOTEMPORAL QUERY:</div>
-      <div style="font-family: monospace; font-size: 0.8rem; color: #a1a1aa; line-height: 1.4;">
-        - Unique fleet logs: 1,812 vessels recorded (42.7% growth span since baseline)<br>
-        - Metrics calculated: 11.8M nautical miles mapped via log-scale slope tracking<br>
-        - Signal correlations: Active polar bear telemetry overlaps identified on expanding commercial lanes
+      <ul style="padding-left: 20px; color: var(--body-gray); margin: 0; gap: 8px; display: flex; flex-direction: column;">
+        <li><strong>Pipeline Engineering:</strong> Built an uncompressed, non-destructive spatial asset extraction process to translate raw GIS elevation models directly into structural render meshes.</li>
+        <li><strong>Topographical Alignment:</strong> Resolved systemic software unit-mismatches by re-projecting base source layers to ensure geographic coordinate accuracy.</li>
+      </ul>
+
+      <details class="interactive-details">
+        <summary>🛠️ View Procedural Shader Nodes & Displacement Logic</summary>
+        <div class="code-snippet">
+# Procedural Heightmap Displace Map Structure
+Material_Output -> Surface (Principled BSDF)
+  Base_Color <- Texture_Coordinate [Generated] -> Mapping -> Noise_Texture -> ColorRamp [Deep Blue Gradient]
+  Displacement <- Texture_Coordinate [Vector] -> Image_Texture [Galapagos_DEM.png] -> Displacement_Node [Scale: 0.045]
+        </div>
+      </details>
+
+      <div style="margin-top: 20px;">
+        <span class="tech-badge badge-gis">QGIS</span>
+        <span class="tech-badge badge-3d">Blender 3D</span>
+        <span class="tech-badge badge-gis">DEM Modeling</span>
+        <span class="tech-badge badge-meta">WGS 84</span>
       </div>
     </div>
-  </div>
-
-  <div class="interactive-card">
-    <div class="card-header">
-      <div class="card-title">3D Topographic Model: Galapagos Digital Twin</div>
-      <button class="interactive-trigger" onclick="toggleEngine('galapagosPanel', 'render_mesh --source dem_raster')">Query Mesh Vectors</button>
+    
+    <div class="visual-pane" style="display: flex; flex-direction: column; gap: 10px;">
+      <img src="assets/img/GalapagosRendered.png" alt="Galapagos 3D Render View" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-gray);">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <img src="assets/img/v2_Galapagos_DEM.png" alt="Galapagos DEM Spatial File" style="width: 100%; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-gray);">
+        <img src="assets/img/BlenderScreenSS.png" alt="Blender Mapping Interface" style="width: 100%; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-gray);">
+      </div>
     </div>
-    <p style="font-size: 0.9rem; margin-bottom: 15px;">Translating raw digital elevation models (DEM) into non-destructive 3D structural render environments.</p>
+  </article>
+
+  <article class="grid-card reverse">
+    <div class="visual-pane">
+      <img src="assets/img/Kruger_Lodge_Suitability_Map.jpg" alt="South Africa Bush Lodge Suitability Analysis Output Map" style="width: 100%; border-radius: 12px; border: 1px solid var(--border-gray); box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    </div>
+    
     <div>
-      <span class="badge badge-core">Blender 3D</span>
-      <span class="badge">QGIS Processing</span>
-      <span class="badge">WGS 84 Realignment</span>
+      <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary-blue); letter-spacing: 0.05em; text-transform: uppercase;">[Medium Complexity] Land Suitability Analysis</span>
+      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">Project 2: Suitable Sites for Remote Bush Lodges in Northeastern South Africa</h3>
+      <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">Monash University | EAE5258 – GIS for Environmental Sciences</p>
+      
+      <div class="pipeline-box">
+        <strong style="display: block; font-size: 0.75rem; color: #64748b; margin-bottom: 5px; text-transform: uppercase;">Data Pipeline Architecture:</strong>
+        <div style="font-family: monospace; font-size: 0.85rem; color: #0f172a;">
+          7 Vector/Raster Inputs ➔ Africa Albers Equal Area Projection ➔ Topo to Raster DEM Integration ➔ Multi-Criteria Reclassification ➔ Boolean Overlay
+        </div>
+      </div>
+
+      <ul style="padding-left: 20px; color: var(--body-gray); margin: 0; gap: 8px; display: flex; flex-direction: column;">
+        <li><strong>Multi-Criteria Evaluation (MCE):</strong> Standardized 7 separate datasets by resolving structural vector defects and coordinate shifts across administrative maps.</li>
+        <li><strong>Environmental Filtering:</strong> Executed raster calculator logic loops and mathematical constraints, identifying 263 low-impact environmental candidate locations across the Kruger National Park layout.</li>
+      </ul>
+
+      <div style="margin-top: 20px;">
+        <span class="tech-badge badge-gis">ArcGIS Pro</span>
+        <span class="tech-badge badge-gis">Spatial Analyst</span>
+        <span class="tech-badge badge-meta">MCE Matrix</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="grid-card">
+    <div>
+      <span style="font-size: 0.8rem; font-weight: 700; color: #7c3aed; letter-spacing: 0.05em; text-transform: uppercase;">[Low/Med Complexity] Urban Analytics Matrix</span>
+      <h3 style="font-size: 1.8rem; margin: 5px 0 10px 0; color: var(--dark-slate);">Project 3: Mapping Urban Green Spaces in San Francisco</h3>
+      <p style="margin: 0; font-size: 0.9rem; color: #64748b; font-style: italic;">Coursera (Guided Project) | The School of Information Design | Instructor: Elisabeth Rosenbloom</p>
+      
+      <p style="color: var(--body-gray); margin-top: 15px; margin-bottom: 15px;">
+        An urban assessment model checking local public park accessibility thresholds and density distribution spreads across metropolitan San Francisco boundaries. Evaluated infrastructural park access by matching regional civic vectors against community boundaries.
+      </p>
+
+      <div style="margin-top: 25px;">
+        <span class="tech-badge badge-gis">ArcGIS</span>
+        <span class="tech-badge badge-meta">Urban Networks</span>
+        <a href="https://coursera.org/share/444f44ed46f7be52f5736cf9c1595938" target="_blank" class="tech-badge badge-live">Verify Credential ↗</a>
+      </div>
+    </div>
+    
+    <div class="visual-pane">
+      <img src="assets/img/SF Parks Evaluation.jpg" alt="SF Parks Evaluation.jpg Asset Map Page" style="width: 100%; border-radius: 12px; border: 1px solid var(--border-gray); box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    </div>
+  </article>
+
+  <h2 class="section-title" style="color: var(--primary-green); border-color: var(--primary-green);">II. Data Science & Narrative Dashboards</h2>
+
+  <div class="featured-card">
+    <div style="border-bottom: 1px solid var(--border-gray); padding-bottom: 20px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;">
+      <div>
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary-green); letter-spacing: 0.05em; text-transform: uppercase;">Featured Full-Stack Visualisation System</span>
+        <h3 style="font-size: 2.2rem; margin: 5px 0 5px 0; color: var(--dark-slate); font-weight: 800;">Arctic Circle Environmental Change Visualizer</h3>
+        <p style="margin: 0; font-size: 1rem; color: #64748b; font-weight: 500;">Monash University | FIT5147 – Data Exploration and Visualisation</p>
+      </div>
+      <div>
+        <a href="https://riyabu.shinyapps.io/arctic-circle-visualizer" target="_blank" class="tech-badge badge-live" style="font-size: 0.9rem; padding: 8px 16px;">⚡ Launch Interactive Application ↗</a>
+      </div>
     </div>
 
-    <div id="galapagosPanel" class="hidden-panel">
-      <div style="color: var(--accent-blue); margin-bottom: 8px;">&gt;&gt; PROCESSING PROCEDURAL DISPLACEMENT NODES:</div>
-      <code style="display: block; white-space: pre; color: #fbbf24; font-size: 0.8rem;">
-Texture_Coordinate[Generated] ➔ Vector_Mapping ➔ Image_Texture[Galapagos_DEM.png] ➔ Displacement_Node[Scale:0.045]
-      </code>
-    </div>
-  </div>
+    <p style="color: var(--body-gray); font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+      Engineered an editorial-grade interactive narrative web application using R Shiny to model and investigate the overlapping ecological impacts of systemic polar shifts. The application synchronizes macro climate markers with micro geospatial observations to uncover structural relationships between ice degradation and commercial activity.
+    </p>
 
-  <div class="section-title">02 / System Base Structures</div>
+    <div class="pipeline-box" style="margin: 25px 0;">
+      <strong style="display: block; font-size: 0.8rem; color: #475569; margin-bottom: 8px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em;">Spatiotemporal Multi-Stream Architecture:</strong>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; color: #0f172a; line-height: 1.5;">
+        [NSIDC Monthly Sea Ice Extent Logs (1978-2026)] ➔ Decadal Deviation Heatmaps<br>
+        [USGS Polar Bear Satellite Tracking Data] ➔ Leaflet Dynamic Spatial Layouts ➔ Intersect Mapping<br>
+        [PAME Arctic Shipping Traffic Database] ➔ Log-Scaled Trend Analysis Slope Charts
+      </div>
+    </div>
+
+    <details class="interactive-details">
+      <summary>🌐 Click to Inspect Reactive UI Mapping & Server Infrastructure (R Shiny)</summary>
+      <div class="code-snippet">
+# Dynamic Leaflet Renderer with Reactive Temporal Filtering Loop
+output$bear_map <- renderLeaflet({
+  spatial_filtered <- bears %>% 
+    filter(year == input$slider_year, season == input$select_season)
   
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-    <div class="interactive-card" style="margin: 0;">
-      <div class="card-title" style="margin-bottom: 15px; color: var(--accent-green); font-size: 1.1rem;">Academic Roots</div>
-      <div style="font-size: 0.85rem; border-left: 2px solid #334155; padding-left: 10px;">
-        <strong>Monash University</strong><br>
-        Master of Data Science (IT)<br>
-        <span style="color: var(--text-muted);">Focus: Data Viz • GIS Engine Matrices</span>
+  leaflet(spatial_filtered) %>%
+    addProviderTiles(providers$CartoDB.PositronNoLabels) %>%
+    addCircleMarkers(
+      lng = ~longitude, lat = ~latitude,
+      color = ~pal_dispatcher(bear), radius = 4,
+      stroke = FALSE, fillOpacity = 0.8,
+      popup = ~paste("Date Logged:", date, "<br>Quality Code:", location_quality)
+    )
+})
+      </div>
+    </details>
+
+    <div class="inner-feature-grid">
+      <div>
+        <h4 style="font-size: 1.1rem; color: var(--dark-slate); margin-top: 0; margin-bottom: 12px; font-weight: 700; border-left: 3px solid var(--primary-green); padding-left: 10px;">Data Engineering & App Capabilities</h4>
+        <ul style="padding-left: 20px; color: var(--body-gray); font-size: 0.95rem; display: flex; flex-direction: column; gap: 10px; margin: 0;">
+          <li><strong>Cross-Functional Filtering:</strong> Built dynamic reactive scoping rules inside <code>server.R</code> leveraging optimized R structures (<code>dplyr</code>, <code>tidyr</code>) to ensure sub-second UI updates across massive temporal spans.</li>
+          <li><strong>Bespoke Visual Channels:</strong> Developed standalone chart rendering pipelines using <code>ggplot2</code> and <code>plotly</code>, crafting custom-designed decadal anomaly heatmaps normalized against a 30-year historical baseline.</li>
+          <li><strong>Interactive Geospatial Layers:</strong> Deployed a Leaflet framework rendering individual satellite telemetry pathways, complete with customized color categorizations mapped by unique specimen tracking signatures.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.1rem; color: var(--dark-slate); margin-top: 0; margin-bottom: 12px; font-weight: 700; border-left: 3px solid var(--primary-blue); padding-left: 10px;">Analytical Findings & System Insights</h4>
+        <ul style="padding-left: 20px; color: var(--body-gray); font-size: 0.95rem; display: flex; flex-direction: column; gap: 10px; margin: 0;">
+          <li><strong>Industrial Scaling:</strong> Quantified a critical <strong>42.7% surge in unique commercial vessels</strong> traversing delicate high-latitude waters, mapping total fleet travel up to a combined 11.8M nautical miles.</li>
+          <li><strong>Sector Disruption:</strong> Isolated severe operational traffic shifts across the log-scale slope configurations, specifically capturing major expansions in commercial Gas Tanker navigation.</li>
+          <li><strong>Ecological Overlay:</strong> Uncovered clear spatiotemporal correlations showing direct overlaps between expanding marine routes and vulnerable seasonal movement corridors.</li>
+        </ul>
       </div>
     </div>
-    <div class="interactive-card" style="margin: 0;">
-      <div class="card-title" style="margin-bottom: 15px; color: var(--accent-orange); font-size: 1.1rem;">Verified Key Hashes</div>
-      <div style="font-size: 0.8rem;">
-        - 3D Geospatial Modeling Lvl 1 // Info Design 2026<br>
-        - Urban Green Space Mapping // ArcGIS Coursera 2026
+
+    <div style="margin-top: 35px; padding-top: 20px; border-top: 1px solid var(--border-gray); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+      <div>
+        <span class="tech-badge" style="background: #ecfdf5; color: #065f46; font-size: 0.85rem; padding: 6px 12px;">R Shiny Dashboard</span>
+        <span class="tech-badge" style="background: #e0f2fe; color: #0366d6; font-size: 0.85rem; padding: 6px 12px;">Leaflet Spatial Engine</span>
+        <span class="tech-badge" style="background: #f1f5f9; color: #334155; font-size: 0.85rem; padding: 6px 12px;">Spatiotemporal Analytical Pipeline</span>
+        <span class="tech-badge" style="background: #fef3c7; color: #92400e; font-size: 0.85rem; padding: 6px 12px;">Interactive Plotly Visuals</span>
       </div>
     </div>
   </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px;">
+    
+    <article style="background: #ffffff; border: 1px solid var(--border-gray); border-radius: 16px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px;">
+          <h3 style="margin: 0; font-size: 1.4rem; color: var(--dark-slate);">AI-Powered Pandemic Early Detection System</h3>
+          <span style="color: #64748b; font-size: 0.85rem; font-weight: 600;">Monash University</span>
+        </div>
+        <p style="color: var(--body-gray); font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+          Engineered an analytics architecture model utilizing multi-stream inputs (wastewater, mobility logs, historical patterns) to pinpoint initial public health anomalies. 
+        </p>
+        <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--body-gray); margin: 0; gap: 6px; display: flex; flex-direction: column;">
+          <li>Evaluated deep historical CDC FluView tracking layers using R frameworks (`dplyr`, `ggplot2`).</li>
+          <li>Achieved an ~80% analytical sensitivity metric across early anomaly signal variations, earning academic Distinction.</li>
+        </ul>
+      </div>
+      
+      <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--border-gray);">
+        <span class="tech-badge badge-ds">R Core</span>
+        <span class="tech-badge badge-ds">Time-Series</span>
+        <span class="tech-badge badge-meta">Predictive Modeling</span>
+      </div>
+    </article>
+
+  </div>
+
+  <h2 class="section-title" style="color: var(--dark-slate); border-color: var(--dark-slate);">III. Qualifications & Foundations</h2>
+
+  <div class="meta-grid">
+    
+    <section style="background: #ffffff; border: 1px solid var(--border-gray); padding: 30px; border-radius: 12px; border-top: 4px solid var(--primary-blue); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+      <h4 style="margin-top: 0; margin-bottom: 20px; color: var(--dark-slate); font-size: 1.3rem; font-weight: 800;">Academic History</h4>
+      
+      <div class="edu-item">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <strong style="font-size: 1.1rem; color: var(--dark-slate);">Monash University</strong>
+          <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">Melbourne, AUS</span>
+        </div>
+        <p style="margin: 4px 0; font-weight: 600; color: var(--primary-blue); font-size: 0.95rem;">Master of Data Science (Information Technology)</p>
+        <p style="margin: 8px 0; font-size: 0.9rem; color: var(--body-gray); line-height: 1.5;">
+          <strong>Leadership & Culture:</strong> Actively volunteering with the <em>Monash Graduate Association (MGA)</em> to support the graduate student network.
+        </p>
+        <div style="margin-top: 8px; font-size: 0.8rem; color: #64748b;">
+          <strong>Core Competencies:</strong> Data Viz • GIS • Relational Databases (SQL) 
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <strong style="font-size: 1.1rem; color: var(--dark-slate);">St. Xavier's College</strong>
+          <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">Jun 2020 – Apr 2023</span>
+        </div>
+        <p style="margin: 4px 0; font-weight: 600; color: var(--primary-blue); font-size: 0.95rem;">Bachelor in Economics (Statistics & Econometrics Minor)</p>
+        <p style="margin: 2px 0; font-size: 0.9rem; font-weight: 700; color: var(--primary-green);">Grade: O+ (Outstanding)</p>
+        <p style="margin: 8px 0; font-size: 0.9rem; color: var(--body-gray); line-height: 1.5;">
+          <strong>Leadership & Culture:</strong> Selected as a Core Committee Member for the Annual Economics Festival <em>'Cognizance 2023'</em>.
+        </p>
+        <div style="margin-top: 8px; font-size: 0.8rem; color: #64748b;">
+          <strong>Core Competencies:</strong> Operations Research Systems • Calculus • Econometrics
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #ffffff; border: 1px solid var(--border-gray); padding: 30px; border-radius: 12px; border-top: 4px solid var(--primary-green); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+      <h4 style="margin-top: 0; margin-bottom: 20px; color: var(--dark-slate); font-size: 1.3rem; font-weight: 800;">Licenses & Certifications</h4>
+      
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        
+        <div class="cert-item">
+          <strong style="display: block; color: var(--dark-slate); font-size: 1rem;">3D Geospatial Modeling Level 1</strong>
+          <span style="color: #64748b; font-size: 0.85rem;">The School of Information Design • Issued May 2026</span>
+          <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: #475569; font-style: italic;">Verified Portfolio Asset: Galapagos 3D Architectural Topographic Mesh</p>
+          <div style="font-size: 0.8rem; color: var(--primary-blue); font-weight: 700; margin-top: 4px;">Blender 3D Engine • Mesh Extrusion Nodes • Spatial Design</div>
+        </div>
+
+        <div class="cert-item">
+          <strong style="display: block; color: var(--dark-slate); font-size: 1rem;">ArcGIS for Beginners: Mapping Urban Green Spaces</strong>
+          <span style="color: #64748b; font-size: 0.85rem;">Coursera (ID: 7X99EU2ZCG75) • Issued Jan 2026</span>
+          <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: #475569; font-style: italic;">Verified Portfolio Asset: San Francisco Metropolitan Parks Evaluation Map</p>
+          <div style="font-size: 0.8rem; color: var(--primary-green); font-weight: 700; margin-top: 4px;">Geographic Information Systems (GIS) • ArcGIS Software Layouts</div>
+        </div>
+
+        <div class="cert-item">
+          <strong style="display: block; color: var(--dark-slate); font-size: 1rem;">Python Data Analysis & Visualization Masterclass</strong>
+          <span style="color: #64748b; font-size: 0.85rem;">Udemy • Issued Feb 2024</span>
+          <div style="font-size: 0.8rem; color: #7c3aed; font-weight: 700; margin-top: 4px;">Pandas Structures • High-Density Statistical Plots</div>
+        </div>
+
+        <div class="cert-item">
+          <strong style="display: block; color: var(--dark-slate); font-size: 1rem;">Understanding and Visualizing Data with Python</strong>
+          <span style="color: #64748b; font-size: 0.85rem;">University of Michigan | Coursera (ID: CL23CBEB2UHD) • Issued May 2020</span>
+          <div style="font-size: 0.8rem; color: #f59e0b; font-weight: 700; margin-top: 4px;">Descriptive Statistics Engineering • Python Libraries (Matplotlib / Seaborn)</div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer style="text-align: center; margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border-gray); color: #94a3b8; font-size: 0.85rem;">
+    Portfolio Pipeline Architecture & Metadata Assets Verified • Compiled June 2026
+  </footer>
 
 </div>
-
-<script>
-  const termInput = document.getElementById('terminalInput');
-  const termOutput = document.getElementById('consoleOutput');
-
-  // Input commands capture engine
-  termInput.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-      const command = termInput.value.trim().toLowerCase();
-      termInput.value = '';
-      
-      if (command === 'help') {
-        termOutput.innerText = "// Available vectors: help | stats | clear | query_arctic";
-      } else if (command === 'stats') {
-        termOutput.innerText = "// Systems: Active // Node Engine: R-Shiny Engine V4 // Latency: 0.02ms";
-      } else if (command === 'clear') {
-        termOutput.innerText = "// Terminal logging flushed.";
-      } else if (command === 'query_arctic') {
-        toggleEngine('arcticPanel', 'query_dataset --target arctic_shipping');
-      } else {
-        termOutput.innerText = `// Terminal error: directive '${command}' unrecognized. Try 'help'.`;
-      }
-    }
-  });
-
-  // Structural panel visibility router
-  function toggleEngine(panelId, consoleText) {
-    const panel = document.getElementById(panelId);
-    if (panel.style.display === 'block') {
-      panel.style.display = 'none';
-      termOutput.innerText = `// System engine unlinked.`;
-    } else {
-      panel.style.display = 'block';
-      termOutput.innerText = `visitor@portfolio:~$ ${consoleText}\n// Injecting dynamic panel pipeline view... [OK]`;
-    }
-  }
-</script>
 
 </body>
 </html>
